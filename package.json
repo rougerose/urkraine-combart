@@ -2,15 +2,31 @@
     "name": "uca",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
+    "repository": "https://github.com/rougerose/urkraine-combart.git",
+    "browserslist": [
+        "defaults, not ie 11"
+    ],
     "scripts": {
-        "dev": "APP_ENV=development vite",
-        "build": "vite build",
-        "preview": "vite preview"
+        "compile": "npm run compile:css",
+        "compile:css": "npm run compile:scss && npm run compile:postcss",
+        "compile:postcss": "postcss src/css/index.css -o dist/css/uca.css",
+        "compile:scss": "sass --no-source-map --load-path=node_modules src/scss/index.scss src/css/index.css",
+        "server": "npm run server:init && npm run watch",
+        "server:init": "browser-sync start -p 'http://localhost:8888/uacombart.dev/'",
+        "server:reload": "browser-sync reload",
+        "watch": "npm run compile && npm run watch:files",
+        "watch:files": "npm run watch:scss && npm run watch:html",
+        "watch:html": "chokidar '/**/*.html' -c 'npm run server:reload'",
+        "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run compile:scss && npm run compile:postcss && npm run server:reload'"
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "browser-sync": "^2.29.1",
+        "chokidar-cli": "^3.0.0",
+        "postcss": "^8.4.21",
+        "postcss-cli": "^10.1.0",
+        "postcss-csso": "^6.0.1",
         "sass": "^1.60.0",
-        "vite": "^4.2.0",
-        "vite-plugin-live-reload": "^3.0.2"
+        "sass-mq": "^6.0.0"
     }
 }
