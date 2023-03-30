@@ -1,1 +1,20 @@
-@use "generic";
+// Variables et helpers
+@use "abstract";
+
+// Base standard
+@use "base";
+
+// Thème et custom properties du site
+@use "theme";
+
+// Global
+@use "global";
+
+// Composition
+@use "composition";
+
+// Blocks (composants)
+@use "blocks";
+
+// Vendors - Tiers
+@use "vendors";

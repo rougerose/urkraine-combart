@@ -1,0 +1,13 @@
+@use "../abstract/variables_colors" as colors;
+@use "utopia-typo";
+@use "utopia-space";
+
+:root {
+	--font-family-mono: "IPM", ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, "Liberation Mono", "Courier New", monospace;
+
+	--color-paper: #{colors.$color-paper};
+	--color-ink: #{colors.$color-ink};
+
+	--flow-space: var(--space-s);
+}
