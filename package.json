@@ -7,25 +7,27 @@
         "defaults, not ie 11"
     ],
     "scripts": {
-        "compile": "npm run compile:css",
-        "compile:css": "npm run compile:scss && npm run compile:postcss",
-        "compile:postcss": "postcss src/css/index.css -o dist/css/uca.css",
+        "clean": "recursive-delete 'dist'",
+        "copy": "recursive-copy 'src/copy' 'dist'",
+        "compile:css": "npm-run-all -s compile:scss compile:postcss",
         "compile:scss": "sass --no-source-map --load-path=node_modules src/scss/index.scss src/css/index.css",
-        "server": "npm run server:init && npm run watch",
-        "server:init": "browser-sync start -p 'http://localhost:8888/uacombart.dev/'",
-        "server:reload": "browser-sync reload",
-        "watch": "npm run compile && npm run watch:files",
-        "watch:files": "npm run watch:scss && npm run watch:html",
-        "watch:html": "chokidar '/**/*.html' -c 'npm run server:reload'",
-        "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run compile:scss && npm run compile:postcss && npm run server:reload'"
+        "compile:postcss": "postcss src/css/index.css -o dist/css/uca.css",
+        "compile": "npm-run-all -s clean copy compile:css",
+        "server:start": "browser-sync start -p 'http://localhost:8888/uacombart.dev/' -f \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
+        "watch-css": "chokidar './src/**/*.scss' -c 'npm run compile:css'",
+        "watch": "npm-run-all -p compile watch-css",
+        "server": "npm-run-all -p watch server:start"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.14",
         "browser-sync": "^2.29.1",
         "chokidar-cli": "^3.0.0",
+        "modern-css-reset": "^1.4.0",
+        "npm-run-all": "^4.1.5",
         "postcss": "^8.4.21",
         "postcss-cli": "^10.1.0",
         "postcss-csso": "^6.0.1",
+        "recursive-fs": "^2.1.0",
         "sass": "^1.60.0",
         "sass-mq": "^6.0.0"
     }
