@@ -4,19 +4,21 @@
     "version": "0.0.0",
     "repository": "https://github.com/rougerose/urkraine-combart.git",
     "browserslist": [
-        "defaults, not ie 11"
+        "defaults, supports es6-module"
     ],
     "scripts": {
-        "clean": "recursive-delete 'dist'",
+        "clean": "rimraf dist/{css/*,js/*,images/*}",
+        "scss": "sass --no-source-map --load-path=node_modules src/scss/index.scss dist/css/uca.css",
+        "autoprefixer": "postcss -r dist/css/uca.css",
         "copy": "recursive-copy 'src/copy' 'dist'",
-        "compile:css": "npm-run-all -s compile:scss compile:postcss",
-        "compile:scss": "sass --no-source-map --load-path=node_modules src/scss/index.scss src/css/index.css",
-        "compile:postcss": "postcss src/css/index.css -o dist/css/uca.css",
-        "compile": "npm-run-all -s clean copy compile:css",
-        "server:start": "browser-sync start -p 'http://localhost:8888/uacombart.dev/' -f \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
-        "watch-css": "chokidar './src/**/*.scss' -c 'npm run compile:css'",
-        "watch": "npm-run-all -p compile watch-css",
-        "server": "npm-run-all -p watch server:start"
+        "serve": "browser-sync start -p 'http://localhost:8888/uacombart.dev/' -f \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
+        "watch:css": "chokidar './src/**/*.scss' -c 'npm run build:css'",
+        "watch": "run-p serve watch:*",
+        "rollup": "rollup --config",
+        "build:css": "run-s scss autoprefixer",
+        "build": "run-s build:*",
+        "dev": "run-s build watch",
+        "prod": "NODE_ENV=production npm run build"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.14",
@@ -28,6 +30,8 @@
         "postcss-cli": "^10.1.0",
         "postcss-csso": "^6.0.1",
         "recursive-fs": "^2.1.0",
+        "rimraf": "^4.4.1",
+        "rollup": "^3.20.2",
         "sass": "^1.60.0",
         "sass-mq": "^6.0.0"
     }
