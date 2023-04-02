@@ -1,0 +1,11 @@
+.icon {
+	height: var(--icon-size, 1em);
+	width: var(--icon-size, 1em);
+}
+
+.icon-burger {
+	--btn-svg-width: 2em;
+	--btn-svg-height: 2em;
+	fill: none;
+	stroke: var(--color-primary);
+}

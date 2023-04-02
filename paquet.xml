@@ -11,5 +11,5 @@
 	<auteur lien='http:rouge-rose.net'>christophe le drean</auteur>
 	<licence>GNU/GPL</licence>
     <necessite nom="zcore" compatibilite="[3.0.4;[" />
-    <pipeline nom="insert_head" inclure="uca_pipelines.php" />
+    <!-- <pipeline nom="insert_head" inclure="uca_pipelines.php" /> -->
 </paquet>

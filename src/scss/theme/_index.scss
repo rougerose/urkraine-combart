@@ -8,6 +8,9 @@
 
 	--color-paper: #{colors.$color-paper};
 	--color-ink: #{colors.$color-ink};
+	--color-primary: #{colors.$color-primary};
 
 	--flow-space: var(--space-s);
+	--max-width: 80rem;
+	--gutter: var(--space-s-l);
 }

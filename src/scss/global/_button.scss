@@ -1,0 +1,29 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	border: 0;
+	border-radius: var(--border-radius-base, 0);
+	cursor: pointer;
+	line-height: 1 !important;
+	margin: 0; // Firefox and Safari have margin
+	overflow: visible; // Edge hides overflow
+	position: relative;
+	text-transform: none; // Firefox inherits text-transform
+	text-decoration: none;
+	white-space: nowrap;
+	-webkit-appearance: button; // Safari otherwise prevents some styles
+	appearance: none;
+
+	& svg {
+		width: var(--btn-svg-width, 1em);
+		height: var(--btn-svg-height, 1em);
+		fill: currentColor;
+		transform: translateY(-0.2ex);
+	}
+}
+
+.button {
+	background-color: transparent;
+	border-radius: 100%;
+	padding: 3px;
+}
