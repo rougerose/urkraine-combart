@@ -1,11 +1,8 @@
 <div class="wrapper">
-	<div class="repel">
-		<div class="site-header_brand">
-			[<a class="site-header_logo" href="#URL_SITE_SPIP">(#INCLURE{fond=images/logo-ukraine-combart.svg})</a>]
-			<div class="site-header_baseline">#SLOGAN_SITE_SPIP</div>
-		</div>
-		[<button id="buttonNavBurger" type="button" class="button" data-menu-controls="menu-0" data-a11y-dialog-show="siteNavOffcanvas" aria-label="">
-        	(#INCLURE{fond=images/icon-burger-100.svg, svg=icon icon-burger, aria-hidden=true})
-      	</button>]
+	<div class="site-header__container">
+		[<a class="site-header__logo" href="#URL_SITE_SPIP">(#INCLURE{fond=images/logo-ukraine-combart.svg})</a>]
+		<nav class="site-header__nav">
+			<INCLURE{fond=inclure/menu, identifiant=barrenav}/>
+		</nav>
 	</div>
 </div>

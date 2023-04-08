@@ -3,33 +3,41 @@
 @use "../tools/mq" as mq;
 
 .site-header {
-	margin-top: var(--space-s);
+	padding-top: var(--space-s);
 }
 
-.site-header_brand {
+.site-header__container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--gutter);
+}
+
+.site-header__brand {
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
 }
 
-.site-header_logo {
+.site-header__logo {
 	display: inline-block;
 	padding: 0;
-	margin-inline: auto;
 
 	& svg {
-		width: 80px;
+		width: 70px;
+
+		& g {
+			fill: var(--color-primary);
+		}
 	}
 }
 
-.site-header_baseline {
-	font-size: var(--step--1);
-	font-weight: 600;
-	margin-top: var(--space-s);
-}
+// .site-header_nav {}
 
 @include mq.mq($from: m) {
-	.site-header_logo svg {
-		width: 100px;
+	.site-header__logo svg {
+		width: 80px;
 	}
 }

@@ -1,0 +1,18 @@
+// TMP styles à redistribuer
+
+.section {
+}
+
+.section__header {
+	font-weight: 400;
+	font-size: var(--step-3);
+	color: var(--color-ink);
+}
+
+.underline {
+	text-decoration: underline;
+	text-decoration-color: var(--color-primary);
+	text-decoration-thickness: 0.8ex;
+	text-underline-offset: 0.1ex;
+	text-decoration-skip-ink: none;
+}
