@@ -10,16 +10,16 @@
         "clean": "rimraf dist/{css/*,js/*,images/*}",
         "scss:dev": "sass --load-path=node_modules src/scss/index.scss dist/css/uca.css",
         "scss:prod": "sass --no-source-map --load-path=node_modules src/scss/index.scss dist/css/uca.css",
+        "scss": "sass --no-source-map --load-path=node_modules src/scss/index.scss dist/css/uca.css",
         "autoprefixer": "postcss -r dist/css/uca.css",
         "copy": "recursive-copy 'src/copy' 'dist'",
         "serve": "browser-sync start -p 'http://localhost:8888/uacombart.dev/' -f \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
-        "watch:css": "chokidar './src/**/*.scss' -c 'npm run build:dev'",
+        "watch:css": "chokidar './src/**/*.scss' -c 'npm run build'",
         "watch": "run-p serve watch:*",
         "rollup": "rollup --config",
-        "build:dev": "run-s clean copy scss:dev autoprefixer",
-        "build:prod": "run-s clean copy scss:prod autoprefixer",
-        "dev": "run-s build:dev watch",
-        "prod": "NODE_ENV=production npm run build:prod"
+        "build": "run-s clean copy scss autoprefixer",
+        "dev": "run-s build watch",
+        "prod": "NODE_ENV=production npm run build"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.14",
