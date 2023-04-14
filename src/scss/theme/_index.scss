@@ -5,6 +5,7 @@
 
 :root {
 	// Couleurs
+	--color-black: #{map.get(colors.$base, "black")};
 	--color-ink: #{map.get(colors.$base, "white")};
 	--color-paper: #{map.get(colors.$blue, 90)};
 	--color-link: #{map.get(colors.$green, 50)};
