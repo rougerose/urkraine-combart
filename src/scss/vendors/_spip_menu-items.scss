@@ -35,3 +35,13 @@
 		}
 	}
 }
+
+.menu-items__item {
+	&.active {
+		a {
+			&::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+}

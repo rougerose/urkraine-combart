@@ -584,6 +584,7 @@ select {
 }
 
 :root {
+  --color-black: hsl(0, 0%, 0%);
   --color-ink: hsl(0, 0%, 100%);
   --color-paper: hsl(210, 100%, 7%);
   --color-link: hsl(90, 100%, 61%);
@@ -1113,6 +1114,10 @@ q::after {
   transition: color 0.2s;
 }
 
+#spip-debug {
+  color: var(--color-black);
+}
+
 .spip_code {
   color: var(--color-ink);
   background-color: var(--color-blue-70);
@@ -1213,6 +1218,10 @@ q::after {
   transition: transform 0.3s ease;
 }
 .menu-items a:hover::after {
+  transform: scaleX(1);
+}
+
+.menu-items__item.active a::after {
   transform: scaleX(1);
 }
 
