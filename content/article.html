@@ -1,19 +1,32 @@
 <BOUCLE(ARTICLES){id_article}>
 	<div class="wrapper">
-		<article class="article region">
-			<header class="article__header prose">
-            	<h1 class="headline_title variant-article measure">#TITRE</h1>
-            	[<p class="headline_subtitle measure">(#SOUSTITRE)</p>]
-            	[<div class="headline_desc variant-article prose-editor flow measure">(#CHAPO)</div>]
-          	</header>
-			<div class="article__content prose">
-				[<div class="flow prose-editor gap-top-5">
-					(#TEXTE)
-				</div>]
-				[<div class="notes prose-editor auto-grid gap-top-6">
+		<div class="region">
+			<BOUCLE_si_logo(CONDITION){si #LOGO_ARTICLE|oui}>
+				<INCLURE{fond=inclure/images/logo_article_hero, id_article}/>
+			</BOUCLE_si_logo>
+			<INCLURE{fond=inclure/breadcrumb/article, id_article}/>
+			<article class="article prose flow">
+				<header class="article_header flow">
+					[<p class="article_leadin-title"><span>(#SURTITRE)</span></p>]
+					<h1 class="article_title">#TITRE</h1>
+					[<p class="article_subtitle">(#SOUSTITRE)</p>]
+					[<div class="article_desc">(#CHAPO|adaptive_images{800})</div>]
+				  </header>
+				<div class="article_content flow">
+					[<div class="flow">
+						(#TEXTE|adaptive_images{800}|ancres_sommaire)
+					</div>]
+				</div>
+				<BOUCLE_documents(DOCUMENTS){id_article}{vu=non}{media=file}{0,1}>
+					<INCLURE{fond=inclure/listes/article_documents_fichiers, id_article}/>
+				</BOUCLE_documents>
+				<BOUCLE_portfolio(DOCUMENTS){id_article}{vu=non}{media=image}{0,1}>
+              		<INCLURE{fond=inclure/listes/article_documents_images, id_article}/>
+            	</BOUCLE_portfolio>
+				[<div class="article_notes grid gap-top-5">
 					(#NOTES)
 				</div>]
-			</div>
-		</article>
+			</article>
+		</div>
 	</div>
 </BOUCLE>

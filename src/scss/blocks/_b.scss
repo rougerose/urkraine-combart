@@ -9,10 +9,11 @@
 	color: var(--color-ink);
 }
 
-.underline {
-	text-decoration: underline;
-	text-decoration-color: var(--color-primary);
-	text-decoration-thickness: 0.8ex;
-	text-underline-offset: 0.1ex;
-	text-decoration-skip-ink: none;
+.hero-image {
+	display: block;
+	// width: 1280px;
+	width: 100%;
+	background-color: var(--color-primary);
+	aspect-ratio: 3/1;
+	margin-inline: auto;
 }

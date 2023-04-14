@@ -28,3 +28,9 @@ if (!isset($GLOBALS['z_blocs'])) {
 		'footer',
 	];
 }
+
+// Appels de notes
+define('_NOTES_OUVRE_REF', '<sup class="spip_note_ref">');
+define('_NOTES_FERME_REF', '</sup>');
+define('_NOTES_OUVRE_NOTE', '<sup class="spip_note_ref">');
+define('_NOTES_FERME_NOTE', '</sup>');

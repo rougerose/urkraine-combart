@@ -1,7 +1,9 @@
-<div class="wrapper">
-	<article class="article region">
-		<header class="article__header prose">
-			<h1 class="headline_title variant-article measure">Page d’accueil (travail en cours)</h1>
-		</header>
-	</article>
+<div class="hero region">
+	<div class="wrapper site-content__baseline">
+		<h1 class="text-primary">#SLOGAN_SITE_SPIP</h1>
+	</div>
 </div>
+
+<BOUCLE_accueil_actualites(SELECTIONS){identifiant=accueil-actus}>
+    <INCLURE{fond=inclure/selections/accueil_actus, id_selection, selection_titre=#TITRE}/>
+</BOUCLE_accueil_actualites>

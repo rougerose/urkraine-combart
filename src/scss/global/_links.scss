@@ -1,6 +1,11 @@
 a {
 	color: currentColor;
-	text-decoration-color: var(--color-ink);
+	text-decoration-color: var(--color-link);
 	text-decoration-thickness: 2px;
 	text-underline-offset: 0.2ex;
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: var(--color-link);
+	}
 }

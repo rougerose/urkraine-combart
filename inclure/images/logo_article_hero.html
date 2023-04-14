@@ -1,0 +1,10 @@
+<BOUCLE_logo_article_hero(ARTICLES){id_article}>
+	[(#REM)
+		<!--
+			1- Taille souhaitée de l'image : 1800 x 600 px,
+			2- Recadrer le logo selon un format 2:1 et le centre,
+			3- Fournir des images de densité 1, 2 et 3.
+		-->
+	]
+	[(#LOGO_ARTICLE|image_recadre{2:1,-,focus}|balise_img{'','article_hero-image'}|adaptive_images{1229})]
+</BOUCLE_logo_article_hero>

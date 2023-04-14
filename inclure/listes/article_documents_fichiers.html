@@ -1,0 +1,11 @@
+<B_docs_associes>
+  <div class="article_documents flow gap-top-5">
+    <h2 id="[(#VAL{documents-telechargement}|identifiant_slug{id, #ARRAY{separateur,-,longueur_mini,5}})]">
+      [(#TOTAL_BOUCLE|singulier_ou_pluriel{uca:document_associe, uca:documents_associes})]
+      <a href="[#(#VAL{documents-telechargement}|identifiant_slug{id, #ARRAY{separateur,-,longueur_mini,5}})]">#</a>
+    </h2>
+    <BOUCLE_docs_associes(DOCUMENTS){id_article}{vu=non}{media=file}{par rang_lien, num titre, titre, id_document}>
+      [(#INCLURE{fond=modeles/file, id_document})]
+    </BOUCLE_docs_associes>
+  </div>
+</B_docs_associes>

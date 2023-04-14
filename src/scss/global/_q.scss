@@ -1,0 +1,9 @@
+q {
+	&::before {
+		margin-inline-end: 1ex;
+	}
+
+	&::after {
+		margin-inline-start: 1ex;
+	}
+}

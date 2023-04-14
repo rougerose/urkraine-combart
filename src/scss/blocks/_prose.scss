@@ -1,8 +1,110 @@
 // Racine des contenus produits par Spip
 .prose {
-	--flow-space: var(--space-s);
+	:is(p, ul, ol, blockquote) {
+		max-width: 70ch;
+	}
 
-	:is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote) {
-		max-width: 60ch;
+	:is(figure, figure + *, h2, h3, h4, h5, h6, table, table + *) {
+		--flow-space: var(--space-xl-2xl);
+	}
+
+	:is(h2, h3, h4, h5, h6) {
+		display: flex;
+		color: var(--color-secondary);
+	}
+
+	// Liens
+	a[class*="spip"]:visited {
+		color: var(--color-link-visited);
+		text-decoration-color: var(--color-link-visited);
+	}
+
+	a[class*="spip"]:hover {
+		color: var(--color-link);
+		text-decoration-color: var(--color-link);
+	}
+
+	// Icone sur les liens externes
+	a.spip_out {
+		&::after {
+			background-color: currentColor;
+			content: "";
+			display: inline-flex;
+			margin-left: 6px;
+			mask-image: url(../../images/icon-link-external-16.svg);
+			mask-size: cover;
+			width: 0.6em;
+			height: 0.6em;
+		}
+	}
+
+	// Ancres sur les intertitres
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		a[href^="#"] {
+			margin-left: 0.5em;
+			color: transparent;
+			font-weight: 600;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		&:hover a[href^="#"],
+		a[href^="#"]:focus {
+			color: var(--color-link);
+		}
+	}
+
+	// Listes
+	li + li {
+		margin-top: var(--space-xs);
+	}
+
+	li > ul {
+		margin-top: var(--space-xs);
+	}
+
+	// Tableaux
+	// Tableaux
+	table {
+		max-width: 100%;
+		min-width: 50%;
+		width: 100%;
+		border-spacing: 0;
+	}
+
+	th,
+	td {
+		padding: 0.8em 0.5em;
+		text-align: left;
+		border-collapse: collapse;
+	}
+
+	th {
+		font-weight: 600;
+	}
+
+	tr th,
+	tr td {
+		border-bottom: 1px solid var(--color-ink);
+	}
+
+	caption {
+		caption-side: bottom;
+		padding: 0.8em 0.5em;
+		font-size: var(--step--1);
+	}
+
+	// Images et documents
+	// Utiliser uniquement le pluriel spip_documentS
+	// car le singulier (spip_document) n'est pas présent dans le modèle utilisé par oembed
+	.article_content {
+		& .spip_documents,
+		& .spip_documents + * {
+			--flow-space: var(--space-xl-2xl);
+		}
 	}
 }

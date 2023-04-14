@@ -1,18 +1,25 @@
 @use "../abstract/variables_colors" as colors;
+@use "sass:map";
 @use "utopia-typo";
 @use "utopia-space";
 
 :root {
-	--color-black: #{colors.$color-black};
-	--color-ink: #{colors.$color-ink};
-	--color-paper: #{colors.$color-paper};
-	--color-primary: #{colors.$color-primary};
-	--color-text-light: #{colors.$color-light};
-
+	// Couleurs
+	--color-ink: #{map.get(colors.$base, "white")};
+	--color-paper: #{map.get(colors.$blue, 90)};
+	--color-link: #{map.get(colors.$green, 50)};
+	--color-link-visited: #{map.get(colors.$gray, 60)};
+	--color-primary: #{map.get(colors.$green, 50)};
+	--color-secondary: #{map.get(colors.$orange, 50)};
+	// --color-blue-60: #{map.get(colors.$blue, 60)};
+	--color-blue-70: #{map.get(colors.$blue, 70)};
+	--color-orange-80: #{map.get(colors.$orange, 80)};
+	// Typo
 	--font-family-mono: "IPM", ui-monospace, SFMono-Regular, Menlo, Monaco,
 		Consolas, "Liberation Mono", "Courier New", monospace;
-
-	--flow-space: var(--space-s);
+	// Marges
+	--flow-space: var(--space-m-l);
 	--gutter: var(--space-s-m);
+	// Containers
 	--wrapper-max-width: 100vw;
 }

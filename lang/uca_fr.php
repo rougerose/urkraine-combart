@@ -6,6 +6,14 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
+	// C
+	'cta_telecharger' => 'Télécharger',
+	// D
+	'document_associe' => 'Document à télécharger',
+	'documents_associes' => 'Documents à télécharger',
+
+	// P
+	'portfolio' => 'Portfolio',
 	// U
 	'uca_titre' => 'Ukraine CombArt',
 );

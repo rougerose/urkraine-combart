@@ -1,0 +1,12 @@
+<B_contenus_actualites>
+  <section class="section news">
+	<div class="wrapper">
+		[<h2 class="section__header text-underline">(#ENV{selection_titre})</h2>]
+		<div class="grid" data-layout="tiers">
+			<BOUCLE_contenus_actualites(SELECTIONS_CONTENUS){id_selection}{par rang}>
+              <INCLURE{fond=inclure/resumes/selection_card, id_selections_contenu} />
+            </BOUCLE_contenus_actualites>
+		</div>
+	</div>
+  </section>
+</B_contenus_actualites>
