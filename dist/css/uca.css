@@ -775,7 +775,7 @@ q::after {
   font-weight: 600;
   font-size: var(--step--1);
   letter-spacing: 0.1em;
-  color: hsl(14, 100%, 45%);
+  color: hsl(14, 100%, 34%);
 }
 
 .article_subtitle {
@@ -823,14 +823,6 @@ q::after {
   font-weight: 400;
   font-size: var(--step-3);
   color: var(--color-ink);
-}
-
-.hero-image {
-  display: block;
-  width: 100%;
-  background-color: var(--color-primary);
-  aspect-ratio: 3/1;
-  margin-inline: auto;
 }
 
 .breadcrumb {
