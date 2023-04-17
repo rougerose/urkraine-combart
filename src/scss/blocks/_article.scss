@@ -4,9 +4,7 @@
 
 .article {
 	max-width: 50rem;
-	margin-inline: auto;
-	margin-block-start: var(--space-xl-2xl);
-	margin-top: var(--space-2xl-3xl);
+	margin: var(--space-xl-2xl) auto;
 }
 
 .article_header {
@@ -75,7 +73,11 @@
 }
 
 .article_hero-image {
-	aspect-ratio: 2/1;
-	object-fit: cover;
-	margin-inline: auto;
+	margin-bottom: var(--space-l);
+
+	& picture {
+		aspect-ratio: 2/1;
+		object-fit: cover;
+		margin-inline: auto;
+	}
 }

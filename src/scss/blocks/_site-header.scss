@@ -1,6 +1,9 @@
 // Site-header
 
 @use "../tools/mq" as mq;
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+// @use "sass:color";
 
 .site-header {
 	padding-top: var(--space-s);
@@ -13,6 +16,15 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: var(--gutter);
+
+	&::after {
+		background-color: map.get(colors.$green, 90);
+		content: "";
+		display: block;
+		height: 1px;
+		width: 100%;
+		margin-top: var(--space-s-m);
+	}
 }
 
 .site-header__brand {

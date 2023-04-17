@@ -752,10 +752,7 @@ q::after {
 
 .article {
   max-width: 50rem;
-  margin-inline: auto;
-  -webkit-margin-before: var(--space-xl-2xl);
-          margin-block-start: var(--space-xl-2xl);
-  margin-top: var(--space-2xl-3xl);
+  margin: var(--space-xl-2xl) auto;
 }
 
 .prose .article_header :is(p) {
@@ -813,6 +810,9 @@ q::after {
 }
 
 .article_hero-image {
+  margin-bottom: var(--space-l);
+}
+.article_hero-image picture {
   aspect-ratio: 2/1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -828,8 +828,7 @@ q::after {
 .breadcrumb {
   font-size: var(--step--1);
   line-height: 1.7;
-  -webkit-margin-before: var(--space-m-l);
-          margin-block-start: var(--space-m-l);
+  margin-top: var(--space-s-m);
 }
 .breadcrumb a {
   text-decoration: none;
@@ -1002,6 +1001,14 @@ q::after {
   justify-content: space-between;
   align-items: center;
   gap: var(--gutter);
+}
+.site-header__container::after {
+  background-color: hsl(90, 100%, 17%);
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: var(--space-s-m);
 }
 
 .site-header__brand {

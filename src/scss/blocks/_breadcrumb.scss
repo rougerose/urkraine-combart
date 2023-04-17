@@ -1,7 +1,7 @@
 .breadcrumb {
 	font-size: var(--step--1);
 	line-height: 1.7;
-	margin-block-start: var(--space-m-l);
+	margin-top: var(--space-s-m);
 
 	a {
 		text-decoration: none;
@@ -44,7 +44,6 @@
 
 		&::before {
 			content: ">";
-			// color: var(--color-);
 		}
 	}
 }
