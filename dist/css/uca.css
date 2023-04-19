@@ -796,7 +796,6 @@ q::after {
 
 .article_title {
   color: var(--color-secondary);
-  font-size: var(--step-5);
 }
 
 .article_leadin-title {

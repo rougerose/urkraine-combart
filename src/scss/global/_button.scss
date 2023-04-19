@@ -19,26 +19,55 @@
 	appearance: none;
 
 	& svg {
-		width: var(--btn-svg-width, 1em);
-		height: var(--btn-svg-height, 1em);
+		width: var(--icon-size, 1em);
+		height: var(--icon-size, 1em);
 		fill: currentColor;
 		transform: translateY(-0.2ex);
 	}
 
-	&:hover {
-		box-shadow: 0px 5px 5px -3px color.adjust(map.get(colors.$green, 70), $alpha:
-						-0.9),
-			0px 8px 8px 1px
-				color.adjust(map.get(colors.$green, 70), $alpha: -0.8),
-			0px 3px 8px 2px
-				color.adjust(map.get(colors.$green, 70), $alpha: -0.8);
-		transition: transform 0.2s linear, box-shadow 0.2s linear,
-			filter 0.4s ease, background-color 0.3s ease;
+	&[data-type="primary"] {
+		background-color: var(--color-contrast);
+		color: var(--color-link-contrast);
+		border-radius: 4px;
+		padding: 0.5em 0.5em;
+
+		&:hover {
+			box-shadow: 0px 5px 5px -3px color.adjust(map.get(colors.$green, 70), $alpha:
+							-0.9),
+				0px 8px 8px 1px
+					color.adjust(map.get(colors.$green, 70), $alpha: -0.8),
+				0px 3px 8px 2px
+					color.adjust(map.get(colors.$green, 70), $alpha: -0.8);
+			transition: transform 0.2s linear, box-shadow 0.2s linear,
+				filter 0.4s ease, background-color 0.3s ease;
+		}
+	}
+
+	&[data-type="link"] {
+		background-color: var(--paper);
+		color: var(--color-link);
+		padding: 0.5em 0.5em;
+	}
+
+	&.with-icon-left {
+		align-items: flex-end;
+		& svg {
+			margin-right: 0.5em;
+		}
+	}
+
+	&.with-icon-right {
+		align-items: flex-end;
+		& svg {
+			margin-left: 0.5em;
+		}
 	}
 }
 
-// .button {
-// 	background-color: transparent;
-// 	border-radius: 100%;
-// 	padding: 3px;
-// }
+// label
+.button_label {
+	span {
+		font-size: var(--step--2);
+		transition: color 0.3s ease;
+	}
+}
