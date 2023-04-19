@@ -1,0 +1,31 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+	<div class="wrapper">
+		<INCLURE{fond=inclure/breadcrumb/rubrique, id_rubrique}/>
+	</div>
+	<div class="rubrique">
+		<header class="rubrique_header region">
+			<div class="wrapper flow prose">
+				<h1 class="rubrique_title">#TITRE</h1>
+				[<div class="rubrique_desc flow">(#TEXTE)</div>]
+			</div>
+		</header>
+
+		<div class="rubrique_content">
+			[(#REM) <!-- Formulaire d'abonnement -->]
+			<div class="pod pod--banner">
+				<div class="wrapper region">
+					<div class="all-center">
+						<h2>Abonnez-vous</h2>
+						<p>formulaire d'abonnement</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="pod region">
+				<div class="wrapper">
+					<INCLURE{fond=inclure/listes/rubrique_cards_article, id_rubrique, pagination=12, env, ajax} />
+				</div>
+			</div>
+		</div>
+	</div>
+</BOUCLE_rubrique>

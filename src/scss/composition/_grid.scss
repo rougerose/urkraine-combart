@@ -10,4 +10,5 @@
 .grid[data-layout="tiers"] {
 	--grid-placement: auto-fit;
 	--grid-min-item-size: clamp(16rem, 33%, 20rem);
+	--gutter: var(--space-2xl) var(--space-xl);
 }

@@ -8,8 +8,10 @@
 	--color-black: #{map.get(colors.$base, "black")};
 	--color-ink: #{map.get(colors.$base, "white")};
 	--color-paper: #{map.get(colors.$blue, 90)};
+	--color-contrast: #{map.get(colors.$green, 50)};
 	--color-link: #{map.get(colors.$green, 50)};
 	--color-link-visited: #{map.get(colors.$gray, 60)};
+	--color-link-contrast: #{map.get(colors.$blue, 90)};
 	--color-primary: #{map.get(colors.$green, 50)};
 	--color-secondary: #{map.get(colors.$orange, 50)};
 	// --color-blue-60: #{map.get(colors.$blue, 60)};

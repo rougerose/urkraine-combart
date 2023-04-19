@@ -1,0 +1,12 @@
+// Pod (sections)
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+// @use "sass:color";
+
+.pod {
+	&--banner {
+		background-color: map.get(colors.$green, 70);
+		color: var(--color-paper);
+	}
+}
