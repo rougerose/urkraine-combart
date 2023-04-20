@@ -11,13 +11,19 @@
 	align-items: flex-start;
 
 	&::before {
-		// background-color: map.get(colors.$orange, 70);
-		background-color: var(--color-primary);
+		background-color: map.get(colors.$green, 90);
 		content: "";
 		display: block;
-		height: 1px;
+		height: 2px;
 		width: 25%;
 		margin-bottom: var(--space-m);
+		transition: background-color 0.25s ease;
+	}
+
+	&:hover {
+		&::before {
+			background-color: var(--color-primary);
+		}
 	}
 }
 
@@ -59,6 +65,8 @@
 		margin-top: 0;
 	}
 }
+
+// .card_desc {}
 
 .card_button-more {
 	margin-left: -8px;
