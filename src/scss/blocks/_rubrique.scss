@@ -1,7 +1,11 @@
 // Squelette Rubrique
 
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
 .rubrique_title {
-	color: var(--color-secondary);
+	// color: var(--color-secondary);
+	color: map.get(colors.$green, 60);
 }
 
 .rubrique_desc {

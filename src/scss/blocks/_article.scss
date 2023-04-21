@@ -20,7 +20,8 @@
 }
 
 .article_title {
-	color: var(--color-secondary);
+	// color: var(--color-secondary);
+	color: map.get(colors.$green, 70);
 }
 
 // Surtitre
@@ -29,7 +30,7 @@
 	font-weight: 600;
 	font-size: var(--step--1);
 	letter-spacing: 0.1em;
-	color: map.get(colors.$orange, 70);
+	color: map.get(colors.$green, 70);
 }
 
 .article_subtitle {
