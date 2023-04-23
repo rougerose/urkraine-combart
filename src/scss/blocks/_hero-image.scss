@@ -1,0 +1,11 @@
+// hero-image (article, rubrique, etc.)
+
+.hero-image {
+	margin: 0 auto var(--space-l);
+
+	& img {
+		aspect-ratio: 2/1;
+		object-fit: cover;
+		width: 100%;
+	}
+}

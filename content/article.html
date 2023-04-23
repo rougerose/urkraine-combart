@@ -1,7 +1,7 @@
 <BOUCLE(ARTICLES){id_article}>
 	<div class="wrapper">
 		<BOUCLE_si_logo(CONDITION){si #LOGO_ARTICLE|oui}>
-			<INCLURE{fond=inclure/images/logo_article_hero, id_article}/>
+			<INCLURE{fond=inclure/images/logo_objet_hero, logo=#LOGO_ARTICLE|extraire_attribut{src}}/>
 		</BOUCLE_si_logo>
 
 		<INCLURE{fond=inclure/breadcrumb/article, id_article}/>

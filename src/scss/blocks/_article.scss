@@ -74,13 +74,3 @@
 		max-width: 40ch;
 	}
 }
-
-.article_hero-image {
-	margin-bottom: var(--space-l);
-
-	& picture {
-		aspect-ratio: 2/1;
-		object-fit: cover;
-		margin-inline: auto;
-	}
-}
