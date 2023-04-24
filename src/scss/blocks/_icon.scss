@@ -8,9 +8,10 @@
 }
 
 .icon-arrow {
-	--icon-size: 0.75em;
+	--icon-size: 0.9em;
 	--icon-opacity: 0;
 	--icon-transform: none;
+	margin-top: 0.1em;
 	stroke: currentColor;
 	stroke-width: var(--icon-stroke-width, 4px);
 	transition: transform 0.3s ease-out, stroke 0.1s;
