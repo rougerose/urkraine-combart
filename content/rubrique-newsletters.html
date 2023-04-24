@@ -1,19 +1,22 @@
 <BOUCLE_rubrique_newsletters(RUBRIQUES){id_rubrique}>
 	<div class="wrapper">
+		<BOUCLE_si_logo(CONDITION){si #LOGO_RUBRIQUE|oui}>
+			<INCLURE{fond=inclure/images/logo_objet_hero, id_objet=#ID_RUBRIQUE, objet=rubrique, logo=#LOGO_RUBRIQUE|extraire_attribut{src}}/>
+		</BOUCLE_si_logo>
 		<INCLURE{fond=inclure/breadcrumb/rubrique, id_rubrique}/>
 	</div>
 	<div class="rubrique">
 		<header class="rubrique_header region">
 			<div class="wrapper flow prose">
 				<h1 class="rubrique_title">#TITRE</h1>
-				[<div class="rubrique_desc flow">(#TEXTE)</div>]
+				[<div class="rubrique_desc text-step-2 flow">(#TEXTE)</div>]
 			</div>
 		</header>
 
 		<div class="rubrique_content">
 			[(#REM) <!-- Formulaire d'abonnement -->]
-			<div class="pod pod--banner">
-				<div class="wrapper region">
+			<div class="pod pod--banner region">
+				<div class="wrapper">
 					<div class="all-center">
 						<h2>Abonnez-vous</h2>
 						<p>formulaire d'abonnement à ajouter</p>
