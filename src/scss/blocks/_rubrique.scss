@@ -3,11 +3,15 @@
 @use "../abstract/variables_colors" as colors;
 @use "sass:map";
 
+// .rubrique_header {}
+
 .rubrique_title {
 	// color: var(--color-secondary);
 	color: map.get(colors.$green, 60);
 }
 
-.rubrique_desc {
-	font-size: var(--step-2);
+// .rubrique_desc {}
+
+.rubrique_content {
+	margin-bottom: var(--space-2xl);
 }

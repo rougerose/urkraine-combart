@@ -4,14 +4,31 @@
 // 	color: var(--color-text-light);
 // }
 
+// Couleurs
 .text-primary {
 	color: var(--color-primary);
 }
 
+// Soulignement
 .text-underline {
 	text-decoration: underline;
 	text-decoration-color: var(--color-primary);
 	text-decoration-thickness: 0.8ex;
 	text-underline-offset: 0.1ex;
 	text-decoration-skip-ink: none;
+}
+
+// Taille des caractères
+
+// .text-step-0 {
+// 	font-size: var(--step-0);
+// }
+
+.text-step-2 {
+	font-size: var(--step-2);
+}
+
+// Mise en page
+.text-center {
+	text-align: center;
 }

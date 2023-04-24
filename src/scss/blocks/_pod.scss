@@ -8,5 +8,12 @@
 	&--banner {
 		background-color: map.get(colors.$green, 70);
 		color: var(--color-paper);
+		padding: var(--space-l-xl);
+	}
+
+	&--sticky {
+		position: sticky;
+		top: var(--space-l);
+		align-self: start;
 	}
 }
