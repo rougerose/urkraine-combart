@@ -593,7 +593,7 @@ select {
   --color-link-contrast: hsl(210, 100%, 7%);
   --color-primary: hsl(90, 100%, 61%);
   --color-secondary: hsl(14, 100%, 56%);
-  --color-blue-70: hsl(210, 100%, 25%);
+  --color-blue-70: hsl(210, 100%, 31%);
   --color-orange-80: hsl(14, 100%, 23%);
   --font-family-mono: "IPM", ui-monospace, SFMono-Regular, Menlo, Monaco,
   	Consolas, "Liberation Mono", "Courier New", monospace;
@@ -947,6 +947,7 @@ q::after {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: transform 0.5s cubic-bezier(0.5, 0.05, 0.2, 1.5);
 }
 .card::before {
   background-color: hsl(90, 100%, 17%);
@@ -956,6 +957,9 @@ q::after {
   width: 25%;
   margin-bottom: var(--space-m);
   transition: background-color 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-0.2em) scale(1.01);
 }
 .card:hover::before {
   background-color: var(--color-primary);
@@ -998,6 +1002,30 @@ q::after {
 
 .card_button-more {
   margin-left: -8px;
+}
+
+.card[data-type=support] {
+  background-color: hsl(90, 100%, 17%);
+  padding: 6px;
+}
+.card[data-type=support]:nth-child(1) {
+  background-color: hsl(210, 100%, 42%);
+}
+.card[data-type=support]:nth-child(2) {
+  background-color: hsl(210, 100%, 31%);
+}
+.card[data-type=support]:nth-child(3) {
+  background-color: hsl(210, 100%, 20%);
+}
+.card[data-type=support]::before {
+  display: none;
+}
+.card[data-type=support] .card_content {
+  padding: 0 var(--space-s);
+  margin-top: var(--space-s);
+}
+.card[data-type=support] .card_media + .card_content {
+  margin-top: 0;
 }
 
 .hero-image {
@@ -1089,6 +1117,8 @@ a:hover .icon-arrow.icon-arrow-left {
 .pod--banner {
   background-color: hsl(90, 100%, 39%);
   color: var(--color-paper);
+  margin-top: var(--space-m-l);
+  margin-bottom: var(--space-m-l);
   padding: var(--space-l-xl);
 }
 .pod--sticky {
@@ -1191,10 +1221,6 @@ a:hover .icon-arrow.icon-arrow-left {
   color: hsl(90, 100%, 50%);
 }
 
-.rubrique_content {
-  margin-bottom: var(--space-2xl);
-}
-
 .site-content__baseline h1 {
   font-weight: normal;
   font-size: var(--step-3);
@@ -1253,6 +1279,18 @@ a:hover .icon-arrow.icon-arrow-left {
 
 .gap-top-5 {
   margin-top: var(--space-2xl-3xl);
+}
+
+.gap-top-4 {
+  margin-top: var(--space-xl-2xl);
+}
+
+.gap-top-3 {
+  margin-top: var(--space-l-xl);
+}
+
+.gap-bottom-4 {
+  margin-bottom: var(--space-xl-2xl);
 }
 
 .offset {
