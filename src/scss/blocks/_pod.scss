@@ -20,7 +20,7 @@
 	}
 
 	&--article-related {
-		background-color: map.get(colors.$green, 70);
+		background-color: map.get(colors.$green, 80);
 		margin-top: var(--space-2xl-3xl);
 		margin-bottom: var(--space-2xl-3xl);
 		padding-top: var(--space-l-xl);
@@ -31,5 +31,6 @@
 .pod_heading {
 	.pod--article-related & {
 		color: map.get(colors.$blue, 95);
+		margin-bottom: var(--space-l-xl);
 	}
 }

@@ -5,7 +5,7 @@
 // @use "sass:color";
 
 .card {
-	// --flow-space: var(--space-s-m);
+	// Variante 1
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -27,6 +27,52 @@
 		&::before {
 			background-color: var(--color-primary);
 		}
+	}
+
+	// Variantes Support (rubrique Nous soutenir) et Related (prolongements d'article)
+	&[data-type="support"],
+	&[data-type="related"] {
+		padding: 6px;
+
+		&::before {
+			display: none;
+		}
+
+		& .card_content {
+			padding: 0 var(--space-s);
+			margin-top: var(--space-s);
+			margin-bottom: var(--space-s);
+		}
+
+		& .card_media + .card_content {
+			margin-top: 0;
+		}
+	}
+
+	&[data-type="support"] {
+		&:nth-child(4n + 1) {
+			// Tous les 5 éléments à partir du premier
+			background-color: map.get(colors.$blue, 50);
+		}
+
+		&:nth-child(4n + 2) {
+			// Tous les 5 éléments à partir du second
+			background-color: map.get(colors.$blue, 60);
+		}
+
+		&:nth-child(4n + 3) {
+			// Tous les 5 éléments à partir du troisième
+			background-color: map.get(colors.$blue, 70);
+		}
+
+		&:nth-child(4n + 4) {
+			// Tous les 5 éléments à partir du quatrième
+			background-color: map.get(colors.$blue, 80);
+		}
+	}
+
+	&[data-type="related"] {
+		background-color: map.get(colors.$blue, 80);
 	}
 }
 
@@ -74,34 +120,4 @@
 
 .card_button-more {
 	margin-left: -8px;
-}
-
-.card[data-type="support"] {
-	background-color: map.get(colors.$green, 90);
-	padding: 6px;
-
-	&:nth-child(1) {
-		background-color: map.get(colors.$blue, 60);
-	}
-
-	&:nth-child(2) {
-		background-color: map.get(colors.$blue, 70);
-	}
-
-	&:nth-child(3) {
-		background-color: map.get(colors.$blue, 80);
-	}
-
-	&::before {
-		display: none;
-	}
-
-	& .card_content {
-		padding: 0 var(--space-s);
-		margin-top: var(--space-s);
-	}
-
-	& .card_media + .card_content {
-		margin-top: 0;
-	}
 }

@@ -807,7 +807,14 @@ q::after {
   --flow-space: var(--space-2xl);
 }
 
+.full-bleed {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .grid {
+  --gutter: var(--space-2xl) var(--space-xl);
   display: grid;
   gap: var(--gutter, var(--space-s-m));
   grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(var(--grid-min-item-size, 16rem), 1fr));
@@ -815,12 +822,16 @@ q::after {
 .grid[data-layout=tiers] {
   --grid-placement: auto-fit;
   --grid-min-item-size: clamp(16rem, 33%, 20rem);
-  --gutter: var(--space-2xl) var(--space-xl);
 }
 .grid[data-layout="50-50"] {
   --grid-placement: auto-fit;
   --grid-min-item-size: clamp(16rem, 50vw, 28rem);
-  --gutter: var(--space-2xl) var(--space-xl);
+}
+.grid--fill[data-layout=tiers] {
+  --grid-placement: auto-fill;
+}
+.grid--gutter-xl {
+  --gutter: var(--space-xl);
 }
 
 .article {
@@ -964,6 +975,35 @@ q::after {
 .card:hover::before {
   background-color: var(--color-primary);
 }
+.card[data-type=support], .card[data-type=related] {
+  padding: 6px;
+}
+.card[data-type=support]::before, .card[data-type=related]::before {
+  display: none;
+}
+.card[data-type=support] .card_content, .card[data-type=related] .card_content {
+  padding: 0 var(--space-s);
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
+}
+.card[data-type=support] .card_media + .card_content, .card[data-type=related] .card_media + .card_content {
+  margin-top: 0;
+}
+.card[data-type=support]:nth-child(4n+1) {
+  background-color: hsl(210, 100%, 50%);
+}
+.card[data-type=support]:nth-child(4n+2) {
+  background-color: hsl(210, 100%, 42%);
+}
+.card[data-type=support]:nth-child(4n+3) {
+  background-color: hsl(210, 100%, 31%);
+}
+.card[data-type=support]:nth-child(4n+4) {
+  background-color: hsl(210, 100%, 20%);
+}
+.card[data-type=related] {
+  background-color: hsl(210, 100%, 20%);
+}
 
 .card_media {
   margin-bottom: var(--space-s-m);
@@ -1002,30 +1042,6 @@ q::after {
 
 .card_button-more {
   margin-left: -8px;
-}
-
-.card[data-type=support] {
-  background-color: hsl(90, 100%, 17%);
-  padding: 6px;
-}
-.card[data-type=support]:nth-child(1) {
-  background-color: hsl(210, 100%, 42%);
-}
-.card[data-type=support]:nth-child(2) {
-  background-color: hsl(210, 100%, 31%);
-}
-.card[data-type=support]:nth-child(3) {
-  background-color: hsl(210, 100%, 20%);
-}
-.card[data-type=support]::before {
-  display: none;
-}
-.card[data-type=support] .card_content {
-  padding: 0 var(--space-s);
-  margin-top: var(--space-s);
-}
-.card[data-type=support] .card_media + .card_content {
-  margin-top: 0;
 }
 
 .hero-image {
@@ -1126,6 +1142,18 @@ a:hover .icon-arrow.icon-arrow-left {
   position: sticky;
   top: var(--space-l);
   align-self: start;
+}
+.pod--article-related {
+  background-color: hsl(90, 100%, 28%);
+  margin-top: var(--space-2xl-3xl);
+  margin-bottom: var(--space-2xl-3xl);
+  padding-top: var(--space-l-xl);
+  padding-bottom: var(--space-l-xl);
+}
+
+.pod--article-related .pod_heading {
+  color: hsl(210, 100%, 4%);
+  margin-bottom: var(--space-l-xl);
 }
 
 .prose :is(p, ul, ol, blockquote) {

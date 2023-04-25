@@ -3,8 +3,8 @@
 		<aside class="pod pod--article-related full-bleed">
 			<div class="wrapper">
 				<div class="flow">
-					<h2 class="pod_heading">Soutenir #NOM_SITE_SPIP</h2>
-					<div class="grid" data-layout="tiers">
+					<h2 class="pod_heading"><:uca:prolonger_articles_soutenir{nom=#NOM_SITE_SPIP}:></h2>
+					<div class="grid grid--gutter-xl" data-layout="tiers">
 						<BOUCLE_articles_lies(ARTICLES){id_article IN #ARTICLES_LIES}>
 							<INCLURE{fond=inclure/resumes/article_card, card_type=support, heading=h3, id_article}/>
 						</BOUCLE_articles_lies>

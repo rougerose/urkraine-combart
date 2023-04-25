@@ -16,6 +16,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// P
 	'portfolio' => 'Portfolio',
+	'prolonger_articles_lies' => 'Prolonger',
+	'prolonger_articles_rubrique' => 'Dans la même rubrique',
+	'prolonger_articles_soutenir' => 'Soutenir @nom@, c’est aussi…',
 
 	// U
 	'uca_titre' => 'Ukraine CombArt',
