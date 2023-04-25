@@ -1,10 +1,15 @@
 <BOUCLE_article_card(ARTICLES){id_article}>
+	[(#SET{heading, #ENV{heading, h2}})]
 	<article class="card"[ data-type="(#ENV{card_type})"]>
 		<INCLURE{fond=inclure/images/logo_article_card, id_article}/>
 		<div class="card_content flow">
 			<div class="card_header">
 				[<p>(#SURTITRE)</p>]
-				<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+				[(#GET{heading}|=={h2}|oui)
+					<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+				][(#GET{heading}|=={h3}|oui)
+					<h3><a href="#URL_ARTICLE">#TITRE</a></h3>
+				]
 				[<p>(#SOUSTITRE)</p>]
 			</div>
 			<div class="card_desc flow">

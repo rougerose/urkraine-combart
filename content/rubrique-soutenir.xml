@@ -2,4 +2,5 @@
   <nom>Nous soutenir</nom>
   <description>Composition pour la rubrique Nous soutenir</description>
   <icon>images/composition-base-xx.svg</icon>
+  <branche type="article" composition="soutenir" />
 </composition>

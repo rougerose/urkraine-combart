@@ -26,5 +26,9 @@
 		[<div class="article_notes grid gap-top-5">
 			(#NOTES)
 		</div>]
+
+		<BOUCLE_si_composition_soutenir(CONDITION){si #COMPOSITION|=={soutenir}}>
+			<INCLURE{fond=inclure/listes/prolonger_article_soutenir, id_article}/>
+		</BOUCLE_si_composition_soutenir>
 	</article>
 </BOUCLE_composition_article>

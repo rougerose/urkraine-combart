@@ -14,15 +14,17 @@
 	--color-link-contrast: #{map.get(colors.$blue, 90)};
 	--color-primary: #{map.get(colors.$green, 50)};
 	--color-secondary: #{map.get(colors.$orange, 50)};
-	// --color-blue-60: #{map.get(colors.$blue, 60)};
 	--color-blue-70: #{map.get(colors.$blue, 70)};
 	--color-orange-80: #{map.get(colors.$orange, 80)};
+
 	// Typo
 	--font-family-mono: "IPM", ui-monospace, SFMono-Regular, Menlo, Monaco,
 		Consolas, "Liberation Mono", "Courier New", monospace;
+
 	// Marges
 	--flow-space: var(--space-m-l);
 	--gutter: var(--space-s-m);
+
 	// Containers
 	--wrapper-max-width: 100vw;
 }
