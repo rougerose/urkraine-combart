@@ -13,6 +13,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
+/*
 const UCA_DEV_HOST = 'http://localhost:3000';
 
 function uca_insert_head($flux) {
@@ -82,3 +83,4 @@ function uca_getManifest() {
 
 	return $data;
 }
+*/

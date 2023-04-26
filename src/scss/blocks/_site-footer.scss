@@ -1,0 +1,22 @@
+// site-footer
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
+// .site-footer {}
+
+.site-footer_container {
+	border-top: 1px solid map.get(colors.$green, 90);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gutter);
+	padding-top: var(--space-xl);
+	padding-bottom: var(--space-xl);
+}
+
+.site-footer_logo {
+	& svg {
+		width: 80px;
+	}
+}

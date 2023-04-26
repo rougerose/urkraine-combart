@@ -3,7 +3,6 @@
 @use "../tools/mq" as mq;
 @use "../abstract/variables_colors" as colors;
 @use "sass:map";
-// @use "sass:color";
 
 .site-header {
 	padding-top: var(--space-s);
@@ -27,29 +26,14 @@
 	}
 }
 
-.site-header__brand {
-	display: flex;
-	flex-direction: column;
-	margin-inline: auto;
-}
-
 .site-header__logo {
-	display: inline-block;
-	padding: 0;
-
 	& svg {
 		width: 80px;
 
-		& g {
-			fill: var(--color-primary);
+		@include mq.mq($from: m) {
+			width: 96px;
 		}
 	}
 }
 
 // .site-header_nav {}
-
-@include mq.mq($from: m) {
-	.site-header__logo svg {
-		width: 96px;
-	}
-}

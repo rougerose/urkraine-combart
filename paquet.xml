@@ -13,6 +13,6 @@
     <necessite nom="zcore" compatibilite="[3.0.4;[" />
     <necessite nom="compositions" compatibilite="[3.9.3;[" />
     <necessite nom="a2a" compatibilite="[4.0.1;[" />
+    <necessite nom="fontawesome" compatibilite="[1.0.5;[" />
     <utilise nom="medias" />
-    <!-- <pipeline nom="insert_head" inclure="uca_pipelines.php" /> -->
 </paquet>
