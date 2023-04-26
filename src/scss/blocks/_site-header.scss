@@ -38,7 +38,7 @@
 	padding: 0;
 
 	& svg {
-		width: 70px;
+		width: 80px;
 
 		& g {
 			fill: var(--color-primary);
@@ -50,6 +50,6 @@
 
 @include mq.mq($from: m) {
 	.site-header__logo svg {
-		width: 80px;
+		width: 96px;
 	}
 }

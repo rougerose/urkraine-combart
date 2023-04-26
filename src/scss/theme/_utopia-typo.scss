@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1240,17,1.2,6,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1240,16,1.2,6,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
 	--fluid-min-width: 320;
@@ -19,70 +19,70 @@
 
 :root {
 	--f--3-min: 8.68;
-	--f--3-max: 9.84;
+	--f--3-max: 9.26;
 	--step--3: calc(
 		((var(--f--3-min) / 16) * 1rem) + (var(--f--3-max) - var(--f--3-min)) *
 			var(--fluid-bp)
 	);
 
 	--f--2-min: 10.42;
-	--f--2-max: 11.81;
+	--f--2-max: 11.11;
 	--step--2: calc(
 		((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) *
 			var(--fluid-bp)
 	);
 
 	--f--1-min: 12.5;
-	--f--1-max: 14.17;
+	--f--1-max: 13.33;
 	--step--1: calc(
 		((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-0-min: 15;
-	--f-0-max: 17;
+	--f-0-max: 16;
 	--step-0: calc(
 		((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-1-min: 18;
-	--f-1-max: 20.4;
+	--f-1-max: 19.2;
 	--step-1: calc(
 		((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-2-min: 21.6;
-	--f-2-max: 24.48;
+	--f-2-max: 23.04;
 	--step-2: calc(
 		((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-3-min: 25.92;
-	--f-3-max: 29.38;
+	--f-3-max: 27.65;
 	--step-3: calc(
 		((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-4-min: 31.1;
-	--f-4-max: 35.25;
+	--f-4-max: 33.18;
 	--step-4: calc(
 		((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-5-min: 37.32;
-	--f-5-max: 42.3;
+	--f-5-max: 39.81;
 	--step-5: calc(
 		((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
 			var(--fluid-bp)
 	);
 
 	--f-6-min: 44.79;
-	--f-6-max: 50.76;
+	--f-6-max: 47.78;
 	--step-6: calc(
 		((var(--f-6-min) / 16) * 1rem) + (var(--f-6-max) - var(--f-6-min)) *
 			var(--fluid-bp)
