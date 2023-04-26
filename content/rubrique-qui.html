@@ -3,46 +3,39 @@
 		<BOUCLE_si_logo(CONDITION){si #LOGO_RUBRIQUE|oui}>
 			<INCLURE{fond=inclure/images/logo_objet_hero, id_objet=#ID_RUBRIQUE, objet=rubrique, logo=#LOGO_RUBRIQUE|extraire_attribut{src}}/>
 		</BOUCLE_si_logo>
-		<INCLURE{fond=inclure/breadcrumb/rubrique, id_rubrique}/>
-	</div>
-	<div class="rubrique">
-		<header class="rubrique_header region">
-			<div class="wrapper prose">
-				<h1 class="rubrique_title">#TITRE</h1>
-			</div>
-		</header>
-		<div class="rubrique_content gap-top-3 gap-bottom-4">
-			<div class="wrapper">
-				<div class="grid" data-layout="50-50">
-					[<div class="rubrique_desc flow">(#TEXTE)</div>]
-					<div class="pod pod--sticky">
-						[(#REM) <!-- Pas de pagination, le nombre d'articles doit rester limité --> ]
-						<INCLURE{fond=inclure/listes/rubrique_cards_article_liste, id_rubrique, pagination=999, env, ajax} />
-					</div>
-				</div>
-			</div>
 
-			<BOUCLE_selection_soutenir(SELECTIONS){identifiant=rubrique-qui-soutenir}>
-				<B_contenus_soutenir>
-					<div class="region">
-						<div class="pod pod--banner">
-							<div class="wrapper">
-								<div class="banner-support flow text-center">
-									<h2 class="banner-support_title">#_selection_soutenir:TITRE</h2>
-									[<div class="banner-support_desc">
-										(#_selection_soutenir:DESCRIPTIF)
-									</div>]
-									<div class="cluster">
-										<BOUCLE_contenus_soutenir(SELECTIONS_CONTENUS){id_selection}{par rang}>
-											<a class="button with-icon-right" data-type="[(#COMPTEUR_BOUCLE|alterner{secondary, secondary-reversed})]"  href="#URL">#TITRE[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a>
-										</BOUCLE_contenus_soutenir>
-									</div>
+		<INCLURE{fond=inclure/breadcrumb/rubrique, id_rubrique}/>
+
+		<div class="rubrique">
+			<header class="rubrique_header region">
+				<div class="flow prose">
+					<h1 class="rubrique_title">#TITRE</h1>
+					[<div class="rubrique_desc text-step-2 flow">(#TEXTE)</div>]
+				</div>
+			</header>
+			<div class="rubrique_content gap-top-2 gap-bottom-5">
+				<div class="pod">
+					<INCLURE{fond=inclure/listes/rubrique_cards_article_grille, id_rubrique, pagination=999, env, ajax} />
+				</div>
+
+				<BOUCLE_selection_soutenir(SELECTIONS){identifiant=rubrique-qui-soutenir}>
+					<B_contenus_soutenir>
+						<div class="pod pod--banner gap-top-4">
+							<div class="banner-support flow text-center">
+								<h2 class="banner-support_title">#_selection_soutenir:TITRE</h2>
+								[<div class="banner-support_desc">
+									(#_selection_soutenir:DESCRIPTIF)
+								</div>]
+								<div class="cluster">
+									<BOUCLE_contenus_soutenir(SELECTIONS_CONTENUS){id_selection}{par rang}>
+										<a class="button with-icon-right" data-type="[(#COMPTEUR_BOUCLE|alterner{secondary, secondary-reversed})]"  href="#URL">#TITRE[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a>
+									</BOUCLE_contenus_soutenir>
 								</div>
 							</div>
 						</div>
-					</div>
-				</B_contenus_soutenir>
-  			</BOUCLE_selection_soutenir>
+					</B_contenus_soutenir>
+  				</BOUCLE_selection_soutenir>
+			</div>
 		</div>
 	</div>
 </BOUCLE_rubrique>
