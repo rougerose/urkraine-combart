@@ -28,7 +28,19 @@
 	font-size: var(--step-2);
 }
 
+.text-step-3 {
+	font-size: var(--step-3);
+}
+
 // Mise en page
 .text-center {
 	text-align: center;
+}
+
+.text-italic {
+	font-style: italic;
+}
+
+.text-normal {
+	font-weight: normal;
 }

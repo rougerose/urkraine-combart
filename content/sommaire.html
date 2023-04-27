@@ -1,9 +1,69 @@
-<div class="hero region">
-	<div class="wrapper site-content__baseline">
-		<h1 class="text-primary">#SLOGAN_SITE_SPIP</h1>
+<div class="wrapper">
+	<div class="region">
+		<div class="text-center">
+			<h2 class="text-primary text-step-3 text-italic text-normal">#SLOGAN_SITE_SPIP</h2>
+		</div>
 	</div>
-</div>
 
-<BOUCLE_accueil_actualites(SELECTIONS){identifiant=accueil-actus}>
-    <INCLURE{fond=inclure/selections/accueil_actus, id_selection, selection_titre=#TITRE}/>
-</BOUCLE_accueil_actualites>
+	<BOUCLE_actualites(SELECTIONS){identifiant=accueil-actus}>
+		<B_contenus_actualites>
+		  <section class="pod region">
+			<div class="flow">
+				<h2 class="pod_heading">#_actualites:TITRE</h2>
+				<div class="grid[(#TOTAL_BOUCLE|=={1}|oui) grid--fill]" data-layout="tiers">
+					<BOUCLE_contenus_actualites(SELECTIONS_CONTENUS){id_selection}{par rang}>
+					  <INCLURE{fond=inclure/resumes/selection_card, id_selections_contenu} />
+					</BOUCLE_contenus_actualites>
+				</div>
+			</div>
+		  </section>
+		</B_contenus_actualites>
+	</BOUCLE_actualites>
+
+	<BOUCLE_selection_apropos(SELECTIONS){identifiant=accueil-apropos}>
+		<B_contenus_apropos>
+			<div class="xregion">
+				<section class="pod pod--banner gap-bottom-5">
+					<div class="banner flow text-center">
+						<h2 class="banner_title">#_selection_apropos:TITRE</h2>
+						[<div class="banner_desc">
+							(#_selection_apropos:DESCRIPTIF)
+						</div>]
+						<div class="cluster">
+							<BOUCLE_contenus_apropos(SELECTIONS_CONTENUS){id_selection}{par rang}>
+								<a class="button with-icon-right" data-type="[(#COMPTEUR_BOUCLE|alterner{secondary, secondary-reversed})]"  href="#URL">#TITRE[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a>
+							</BOUCLE_contenus_apropos>
+						</div>
+					</div>
+				</section>
+			</div>
+		</B_contenus_apropos>
+	</BOUCLE_selection_apropos>
+
+	<BOUCLE_selections_presentation(SELECTIONS){identifiant=accueil-presentation}>
+		<B_contenus_presentation>
+			<div class="gap-bottom-5">
+				<BOUCLE_contenus_presentation(SELECTIONS_CONTENUS){id_selection}{par rang}>
+					<section class="pod pod--presentation">
+						<h2 class="pod_heading"><a href="#URL">#TITRE</a></h2>
+						<div class="with-sidebar">
+							[<div class="pod_desc flow">
+								(#DESCRIPTIF)
+								<p class="card_button-more"><a href="#URL" class="button with-icon-right" data-type="link"><:uca:cta_lire_suite:>[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a></p>
+							</div>]
+							<INCLURE{fond=inclure/images/logo_selection_presentation, id_selections_contenu}/>
+						</div>
+					</section>
+				</BOUCLE_contenus_presentation>
+			</div>
+		</B_contenus_presentation>
+	</BOUCLE_selections_presentation>
+
+	<section class="pod pod--banner gap-bottom-5">
+		<div class="banner text-center">
+			<h2 class="banner_title"><:uca:newsletter_bandeau_titre:></h2>
+			<p class="banner_desc"><:uca:newsletter_bandeau_desc:></p>
+			<p>Formulaire d'abonnement à ajouter</p>
+		</div>
+	</section>
+</div>

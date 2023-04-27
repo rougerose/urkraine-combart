@@ -26,11 +26,48 @@
 		padding-top: var(--space-l-xl);
 		padding-bottom: var(--space-l-xl);
 	}
+
+	&--presentation {
+		& + & {
+			margin-top: var(--space-3xl);
+		}
+
+		& + &:nth-child(2n) {
+			& .with-sidebar {
+				flex-direction: row-reverse;
+			}
+		}
+
+		& .pod_heading {
+			margin-bottom: var(--space-xl);
+			& a {
+				text-decoration: none;
+			}
+		}
+
+		& .pod_desc {
+			align-self: center;
+			font-size: var(--step-1);
+		}
+
+		& .with-sidebar {
+			--sidebar-width: 27rem;
+			gap: var(--space-m-l) var(--space-l-xl);
+		}
+
+		& img {
+			width: 100%;
+		}
+	}
 }
 
 .pod_heading {
+	color: map.get(colors.$orange, 50);
+	font-size: var(--step-4);
+
 	.pod--article-related & {
 		color: map.get(colors.$blue, 95);
 		margin-bottom: var(--space-l-xl);
+		font-size: var(--step-3);
 	}
 }

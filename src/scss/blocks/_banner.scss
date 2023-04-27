@@ -1,17 +1,24 @@
 // Banner
 // Bandeaux
 
-.banner-support {
+.banner {
 	--cluster-v-alignment: center;
 
-	&_title {
-		font-size: var(--step-4);
+	&--support {
+		& .banner_desc {
+			max-width: 50ch;
+		}
 	}
+}
 
-	&_desc {
-		font-size: var(--step-2);
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 50ch;
-	}
+.banner_title {
+	font-size: var(--step-4);
+}
+
+.banner_desc {
+	font-size: var(--step-1);
+	font-weight: 600;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 60ch;
 }

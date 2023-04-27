@@ -14,6 +14,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'document_associe' => 'Document à télécharger',
 	'documents_associes' => 'Documents à télécharger',
 
+	// N
+	'newsletter_bandeau_titre' => 'Suivez notre actualité',
+	'newsletter_bandeau_desc' => 'Abonnez-vous à notre newsletter',
+
 	// P
 	'portfolio' => 'Portfolio',
 	'prolonger_articles_lies' => 'Prolonger',
