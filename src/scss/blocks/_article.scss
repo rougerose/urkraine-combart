@@ -32,6 +32,7 @@
 }
 
 .article_title {
+	--flow-space: var(--space-s);
 	color: map.get(colors.$green, 70);
 }
 
