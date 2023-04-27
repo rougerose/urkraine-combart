@@ -7,6 +7,18 @@
 .article {
 	max-width: 50rem;
 	margin: var(--space-xl-2xl) auto;
+
+	&--contact {
+		max-width: unset;
+		--sidebar-width: 27rem;
+		--sidebar-gutter: var(--space-m);
+
+		& .formulaire-contact {
+			// Alignement horizontal du contenu des deux colonnes:
+			// compenser le padding-top du formulaire.
+			margin-top: calc(var(--space-m) * -1);
+		}
+	}
 }
 
 .article_header {
