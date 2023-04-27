@@ -2,7 +2,8 @@
 @use "sass:map";
 @use "sass:color";
 
-.button {
+.button,
+.btn {
 	-webkit-appearance: button; // Safari otherwise prevents some styles
 	appearance: none;
 	display: inline-flex;
@@ -15,13 +16,16 @@
 	line-height: 1 !important;
 	margin: 0; // Firefox and Safari have margin
 	min-height: 44px;
+	min-width: 10ch;
 	padding: 0.25em 0.75em;
 	overflow: visible; // Edge hides overflow
 	position: relative;
 	text-transform: none; // Firefox inherits text-transform
 	text-decoration: none;
 	white-space: nowrap;
+}
 
+.button {
 	& svg {
 		width: var(--icon-size, 1em);
 		height: var(--icon-size, 1em);

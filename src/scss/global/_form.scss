@@ -1,0 +1,65 @@
+// Form
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+@use "sass:color";
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+legend {
+	font-size: var(--step-3);
+	font-weight: 600;
+	color: var(--color-secondary);
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="submit"],
+input[type="file"],
+textarea {
+	display: block;
+	background-color: color.adjust(
+		map.get(colors.$base, "white"),
+		$alpha: -0.95
+	);
+	border-radius: var(--border-radius-base);
+	border: 1px solid color.adjust(map.get(colors.$gray, 70), $alpha: -0.7);
+	box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px inset,
+		rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
+		rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+	color: var(--color-ink);
+	font: inherit;
+	font-size: var(--step-1);
+	line-height: 1;
+	padding: 0.5em 0.5em 0.375em;
+	width: 100%;
+	appearance: none;
+}
+
+input[type="file"] {
+	font-size: 0.9em;
+	margin-bottom: 0 !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	width: min(1.13em, 18px);
+	height: min(1.13em, 18px);
+	flex-shrink: 0;
+
+	+ label {
+		cursor: pointer;
+		margin-left: 0.25em;
+	}
+
+	&:disabled + label {
+		cursor: not-allowed;
+		color: map.get(colors.$gray, 40);
+	}
+}
