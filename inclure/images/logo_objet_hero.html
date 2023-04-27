@@ -4,11 +4,14 @@
 
 		-->
 	][(#SET{logo, #VALEUR|image_recadre{3:1,-,focus}|extraire_attribut{src}})]
-	[(#SET{S@01, #GET{logo}|image_reduire{375, 125}|extraire_attribut{src}})]
+	[(#SET{S@01, #GET{logo}|image_reduire{375, 125}})]
+	[(#SET{largeur, #GET{S@01}|largeur})]
+	[(#SET{hauteur, #GET{S@01}|hauteur})]
+	[(#SET{S@01, #GET{S@01}|extraire_attribut{src}})]
 	[(#SET{S@02, #GET{logo}|image_reduire{615, 205}|extraire_attribut{src}})]
 	[(#SET{M@01, #GET{logo}|image_reduire{1230, 410}|extraire_attribut{src}})]
 	[(#SET{M@02, #GET{logo}|image_reduire{1800, 600}|extraire_attribut{src}})]
 	<figure class="hero-image">
-		[<img src="(#GET{S@01})" srcset="[(#GET{S@01}) 375w][, (#GET{S@02}) 615w][, (#GET{M@01}) 1230w][, (#GET{M@02}) 1800w]" sizes="100vw" width="[(#GET{S@1}|largeur)]" height="[(#GET{S@1}|hauteur)]" alt="" class="no-adapt-img">]
+		[<img src="(#GET{S@01})" srcset="[(#GET{S@01}) 375w][, (#GET{S@02}) 615w][, (#GET{M@01}) 1230w][, (#GET{M@02}) 1800w]" sizes="100vw" width="[(#GET{largeur})]" height="[(#GET{hauteur})]" alt="" class="no-adapt-img">]
 	</figure>
 </BOUCLE_logo>

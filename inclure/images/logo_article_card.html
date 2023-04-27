@@ -7,13 +7,16 @@
 			3 col -> max 375px @x2.5 937px
 		-->
 	][(#SET{logo, #LOGO_ARTICLE|image_recadre{2:1,-,focus}|extraire_attribut{src}})]
-	[(#SET{S@01, #GET{logo}|image_reduire{375, 188}|extraire_attribut{src}})]
+	[(#SET{S@01, #GET{logo}|image_reduire{375, 188}})]
+	[(#SET{largeur, #GET{S@01}|largeur})]
+	[(#SET{hauteur, #GET{S@01}|hauteur})]
+	[(#SET{S@01, #GET{S@01}|extraire_attribut{src}})]
 	[(#SET{S@02, #GET{logo}|image_reduire{937, 469}|extraire_attribut{src}})]
 	[(#SET{M@01, #GET{logo}|image_reduire{580, 290}|extraire_attribut{src}})]
 	[(#SET{M@02, #GET{logo}|image_reduire{1580, 790}|extraire_attribut{src}})]
 	[<div class="card_media">
 		<a href="#URL_ARTICLE">
-			<img src="(#GET{S@01})" srcset="[(#GET{S@01}) 375w][, (#GET{M@01}) 580w][, (#GET{S@02}) 937w][, (#GET{M@02}) 1580w]" sizes="100vw" width="[(#GET{S@1}|largeur)]" height="[(#GET{S@1}|hauteur)]" alt="" class="no-adapt-img">
+			<img src="(#GET{S@01})" srcset="[(#GET{S@01}) 375w][, (#GET{M@01}) 580w][, (#GET{S@02}) 937w][, (#GET{M@02}) 1580w]" sizes="100vw" width="[(#GET{largeur})]" height="[(#GET{hauteur})]" alt="" class="no-adapt-img">
 		</a>
 	</div>]
 </BOUCLE_logo_article_card>
