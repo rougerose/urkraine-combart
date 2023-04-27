@@ -1,9 +1,30 @@
 import resolve from "@rollup/plugin-node-resolve";
+import terser from "@rollup/plugin-terser";
+import commonjs from "@rollup/plugin-commonjs";
 
-export default {
-	input: "src/main.js",
-	output: {
-		file: "dist/js/uca.js",
-		format: "es",
+const output_plugins = [
+	process.env.NODE_ENV === "production" && terser(),
+	// filesize(),
+];
+
+export default [
+	{
+		input: "focus-visible/src/focus-visible.js",
+		plugins: [resolve(), commonjs()],
+		output: [
+			{
+				file: "dist/js/polyfill/focus-visible.js",
+				format: "umd",
+				plugins: output_plugins,
+			},
+		],
 	},
-};
+];
+
+// export default {
+// 	input: "src/main.js",
+// 	output: {
+// 		file: "dist/js/uca.js",
+// 		format: "es",
+// 	},
+// };

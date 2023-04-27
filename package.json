@@ -2,6 +2,7 @@
     "name": "uca",
     "private": true,
     "version": "0.0.0",
+    "type": "module",
     "repository": "https://github.com/rougerose/urkraine-combart.git",
     "browserslist": [
         "defaults, supports es6-module"
@@ -17,22 +18,27 @@
         "watch:css": "chokidar './src/**/*.scss' -c 'npm run build'",
         "watch": "run-p serve watch:*",
         "rollup": "rollup --config",
-        "build": "run-s clean copy scss autoprefixer",
+        "build": "run-s clean copy scss autoprefixer rollup",
         "dev": "run-s build watch",
         "prod": "NODE_ENV=production npm run build"
     },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^24.1.0",
+        "@rollup/plugin-node-resolve": "^15.0.2",
+        "@rollup/plugin-terser": "^0.4.1",
         "autoprefixer": "^10.4.14",
         "browser-sync": "^2.29.1",
         "chokidar-cli": "^3.0.0",
+        "focus-visible": "^5.2.0",
         "modern-css-reset": "^1.4.0",
         "npm-run-all": "^4.1.5",
-        "postcss": "^8.4.21",
+        "postcss": "^8.4.23",
         "postcss-cli": "^10.1.0",
         "postcss-csso": "^6.0.1",
+        "postcss-load-config": "^4.0.1",
         "recursive-fs": "^2.1.0",
-        "rimraf": "^4.4.1",
-        "rollup": "^3.20.2",
+        "rimraf": "^5.0.0",
+        "rollup": "^3.21.0",
         "sass": "^1.60.0",
         "sass-mq": "^6.0.0"
     }
