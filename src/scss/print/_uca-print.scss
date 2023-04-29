@@ -1,0 +1,81 @@
+@use "gutenberg-css_variables" as variables;
+
+:root {
+	--color-ink: var(--color-black);
+	--color-paper: var(--color-white);
+	--color-object-title: var(--color-ink);
+	--color-link: var(--color-ink);
+	--color-link-visited: var(--color-black);
+	--color-link-contrast: var(--color-black);
+	--color-primary: var(--color-black);
+	--color-secondary: var(--color-black);
+	--color-contrast: var(--color-white);
+	--color-border-document: var(--color-black);
+}
+
+// Marges de la page
+// directive @page plutôt que body
+// https://stackoverflow.com/a/1542543
+@page {
+	margin: 18mm 25mm;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.article {
+	max-width: unset;
+}
+
+.prose {
+	:is(p, ul, ol, blockquote) {
+		max-width: unset;
+	}
+}
+
+.full-bleed {
+	width: 100%;
+	margin-left: auto;
+	transform: none;
+}
+
+.pod--banner {
+	border: 1px solid;
+}
+
+button,
+.btn,
+.button {
+	border: 1px solid;
+}
+
+.site-header {
+	padding-top: 0;
+	margin-bottom: var(--space-m);
+}
+
+.wrapper {
+	max-width: unset;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.region {
+	padding-top: var(--space-m);
+	padding-bottom: var(--space-m);
+}
+
+img {
+	display: inline-block;
+}
+
+// no-print
+.site-header_nav,
+.site-header_container::after,
+.breadcrumb,
+.site-footer,
+.spip-admin-float {
+	display: none;
+}

@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@media print {
+	@include meta.load-css("gutenberg-css");
+}

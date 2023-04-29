@@ -1,0 +1,7 @@
+@use "gutenberg-css/scss/variables"
+	with(
+		$base-font-family: #{var(--font-family-mono)},
+		$headers-font-family: #{var(--font-family-mono)}
+	);
+
+@forward "gutenberg-css/scss/variables";
