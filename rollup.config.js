@@ -20,11 +20,3 @@ export default [
 		],
 	},
 ];
-
-// export default {
-// 	input: "src/main.js",
-// 	output: {
-// 		file: "dist/js/uca.js",
-// 		format: "es",
-// 	},
-// };
