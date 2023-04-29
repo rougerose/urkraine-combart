@@ -6,8 +6,7 @@
 // .rubrique_header {}
 
 .rubrique_title {
-	// color: var(--color-secondary);
-	color: map.get(colors.$green, 60);
+	color: var(--color-object-title);
 }
 
 // .rubrique_desc {}

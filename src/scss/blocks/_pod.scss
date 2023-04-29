@@ -2,7 +2,7 @@
 
 @use "../abstract/variables_colors" as colors;
 @use "sass:map";
-// @use "sass:color";
+@use "sass:color";
 
 .pod {
 	&--banner {
@@ -13,14 +13,17 @@
 		padding: var(--space-l-xl);
 	}
 
-	&--sticky {
-		position: sticky;
-		top: var(--space-l);
-		align-self: start;
-	}
+	// &--sticky {
+	// 	position: sticky;
+	// 	top: var(--space-l);
+	// 	align-self: start;
+	// }
 
 	&--article-related {
-		background-color: map.get(colors.$green, 80);
+		background-color: color.adjust(
+			map.get(colors.$green, 90),
+			$alpha: -0.3
+		);
 		margin-top: var(--space-2xl-3xl);
 		margin-bottom: var(--space-2xl-3xl);
 		padding-top: var(--space-l-xl);
@@ -62,11 +65,10 @@
 }
 
 .pod_heading {
-	color: map.get(colors.$orange, 50);
+	color: var(--color-secondary);
 	font-size: var(--step-4);
 
 	.pod--article-related & {
-		color: map.get(colors.$blue, 95);
 		margin-bottom: var(--space-l-xl);
 		font-size: var(--step-3);
 	}

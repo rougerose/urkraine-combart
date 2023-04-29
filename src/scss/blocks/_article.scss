@@ -33,7 +33,7 @@
 
 .article_title {
 	--flow-space: var(--space-s);
-	color: map.get(colors.$green, 70);
+	color: var(--color-object-title);
 }
 
 // Surtitre
@@ -42,7 +42,7 @@
 	font-weight: 600;
 	font-size: var(--step--1);
 	letter-spacing: 0.1em;
-	color: map.get(colors.$green, 70);
+	color: var(--color-title);
 }
 
 .article_subtitle {

@@ -15,8 +15,9 @@
 	--color-link-contrast: #{map.get(colors.$blue, 90)};
 	--color-primary: #{map.get(colors.$green, 50)};
 	--color-secondary: #{map.get(colors.$orange, 50)};
-	--color-blue-70: #{map.get(colors.$blue, 70)};
-	--color-orange-80: #{map.get(colors.$orange, 80)};
+
+	--color-border-document: #{map.get(colors.$orange, 80)};
+	--color-object-title: #{map.get(colors.$green, 60)};
 
 	// Typo
 	--font-family-mono: "IPM", ui-monospace, SFMono-Regular, Menlo, Monaco,
