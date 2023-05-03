@@ -1,0 +1,36 @@
+<BOUCLE_composition_article(ARTICLES){id_article}>
+	<BOUCLE_si_logo(CONDITION){si #LOGO_ARTICLE|oui}>
+		<INCLURE{fond=inclure/images/logo_objet_hero, logo=#LOGO_ARTICLE|extraire_attribut{src}}/>
+	</BOUCLE_si_logo>
+
+	<INCLURE{fond=inclure/breadcrumb/article, id_article}/>
+
+	<article class="article prose flow">
+		<header class="article_header flow">
+			[<p class="article_leadin-title"><span>(#SURTITRE)</span></p>]
+			<h1 class="article_title">#TITRE</h1>
+			[<p class="article_subtitle">(#SOUSTITRE)</p>]
+			[<div class="article_desc">(#CHAPO|adaptive_images{800})</div>]
+		</header>
+		<div class="article_content flow">
+			[<div class="flow">
+				(#TEXTE|adaptive_images{800}|ancres_sommaire)
+			</div>]
+		</div>
+		<BOUCLE_documents(DOCUMENTS){id_article}{vu=non}{media=file}{0,1}>
+			<INCLURE{fond=inclure/listes/article_documents_fichiers, id_article}/>
+		</BOUCLE_documents>
+		<BOUCLE_portfolio(DOCUMENTS){id_article}{vu=non}{media=image}{0,1}>
+				<INCLURE{fond=inclure/listes/article_documents_images, id_article}/>
+		</BOUCLE_portfolio>
+		[<div class="article_notes grid gap-top-5">
+			(#NOTES)
+		</div>]
+	</article>
+
+	<BOUCLE_si_composition_soutenir(CONDITION){si #COMPOSITION|=={soutenir}}>
+		<INCLURE{fond=inclure/listes/prolonger_article_soutenir, id_article}/>
+	</BOUCLE_si_composition_soutenir>
+		<INCLURE{fond=inclure/listes/prolonger_article, id_rubrique, id_article}/>
+	<//B_si_composition_soutenir>
+</BOUCLE_composition_article>

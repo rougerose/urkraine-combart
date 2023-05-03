@@ -1,0 +1,88 @@
+// Squelette Article
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+@use "sass:color";
+
+.article {
+	max-width: 50rem;
+	margin: var(--space-xl-2xl) auto;
+
+	&--contact {
+		max-width: unset;
+		--sidebar-width: 27rem;
+		--sidebar-gutter: var(--space-m);
+
+		& .formulaire-contact {
+			// Alignement horizontal du contenu des deux colonnes:
+			// compenser le padding-top du formulaire.
+			margin-top: calc(var(--space-m) * -1);
+		}
+	}
+}
+
+.article_header {
+	.prose & :is(p) {
+		max-width: unset;
+	}
+}
+
+.article_content {
+	margin-top: var(--space-xl-2xl);
+}
+
+.article_title {
+	--flow-space: var(--space-s);
+	color: var(--color-object-title);
+}
+
+// Surtitre
+.article_leadin-title {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: var(--step--1);
+	letter-spacing: 0.1em;
+	color: var(--color-title);
+}
+
+.article_subtitle {
+	font-size: var(--step-2);
+	font-weight: 600;
+	color: var(--color-ink);
+}
+
+.article_desc {
+	--flow-space: var(--space-l);
+	font-size: var(--step-1);
+	margin-top: var(--space-xl-2xl);
+}
+
+.article_documents {
+	& .spip_documents {
+		&:first-of-type {
+			margin-top: var(--flow-space);
+		}
+	}
+}
+
+.article_notes {
+	--gutter: var(--space-m) var(--space-s);
+	position: relative;
+
+	div:first-child {
+		&::before {
+			content: "";
+			width: 100px;
+			height: 1px;
+			background-color: var(--color-secondary);
+			display: block;
+			position: absolute;
+			top: calc(var(--space-m) * -1);
+		}
+	}
+
+	p {
+		font-size: var(--step--1);
+		max-width: 40ch;
+	}
+}

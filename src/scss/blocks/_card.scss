@@ -1,0 +1,123 @@
+// card
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+// @use "sass:color";
+
+.card {
+	// Variante 1
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	transition: transform 0.5s cubic-bezier(0.5, 0.05, 0.2, 1.5);
+
+	&::before {
+		background-color: map.get(colors.$green, 90);
+		content: "";
+		display: block;
+		height: 2px;
+		width: 25%;
+		margin-bottom: var(--space-m);
+		transition: background-color 0.25s ease;
+	}
+
+	&:hover {
+		transform: translateY(-0.2em) scale(1.01);
+
+		&::before {
+			background-color: var(--color-primary);
+		}
+	}
+
+	// Variantes Support (rubrique Nous soutenir) et Related (prolongements d'article)
+	&[data-type="support"],
+	&[data-type="related"] {
+		padding: 6px;
+
+		&::before {
+			display: none;
+		}
+
+		& .card_content {
+			padding: 0 var(--space-s);
+			margin-top: var(--space-s);
+			margin-bottom: var(--space-s);
+		}
+
+		& .card_media + .card_content {
+			margin-top: 0;
+		}
+	}
+
+	&[data-type="support"] {
+		&:nth-child(4n + 1) {
+			// Tous les 5 éléments à partir du premier
+			background-color: map.get(colors.$blue, 50);
+		}
+
+		&:nth-child(4n + 2) {
+			// Tous les 5 éléments à partir du second
+			background-color: map.get(colors.$blue, 60);
+		}
+
+		&:nth-child(4n + 3) {
+			// Tous les 5 éléments à partir du troisième
+			background-color: map.get(colors.$blue, 70);
+		}
+
+		&:nth-child(4n + 4) {
+			// Tous les 5 éléments à partir du quatrième
+			background-color: map.get(colors.$blue, 80);
+		}
+	}
+
+	&[data-type="related"] {
+		background-color: map.get(colors.$blue, 90);
+	}
+}
+
+.card_media {
+	margin-bottom: var(--space-s-m);
+
+	img {
+		aspect-ratio: 2/1;
+		object-fit: cover;
+		margin-inline: auto;
+		width: 100%;
+	}
+}
+
+.card_content {
+	--flow-space: var(--space-s-m);
+	a {
+		color: var(--color-link);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.card_header {
+	& h2 {
+		font-size: var(--step-2);
+	}
+
+	& p {
+		margin-top: var(--space-s);
+	}
+
+	& p:first-child {
+		font-size: var(--step--1);
+		text-transform: uppercase;
+		margin-bottom: var(--space-xs);
+		margin-top: 0;
+	}
+}
+
+// .card_desc {}
+
+.card_button-more {
+	margin-left: -8px;
+}

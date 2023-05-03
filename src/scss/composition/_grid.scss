@@ -1,0 +1,29 @@
+.grid {
+	--gutter: var(--space-2xl) var(--space-xl);
+	display: grid;
+	gap: var(--gutter, var(--space-s-m));
+	grid-template-columns: repeat(
+		var(--grid-placement, auto-fill),
+		minmax(var(--grid-min-item-size, 16rem), 1fr)
+	);
+
+	&[data-layout="tiers"] {
+		--grid-placement: auto-fit;
+		--grid-min-item-size: clamp(16rem, 33%, 20rem);
+	}
+
+	&[data-layout="50-50"] {
+		--grid-placement: auto-fit;
+		--grid-min-item-size: clamp(16rem, 50vw, 28rem);
+	}
+
+	&--fill {
+		&[data-layout="tiers"] {
+			--grid-placement: auto-fill;
+		}
+	}
+
+	&--gutter-xl {
+		--gutter: var(--space-xl);
+	}
+}

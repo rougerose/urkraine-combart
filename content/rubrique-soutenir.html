@@ -1,0 +1,24 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+	<div class="wrapper">
+		<BOUCLE_si_logo(CONDITION){si #LOGO_RUBRIQUE|oui}>
+			<INCLURE{fond=inclure/images/logo_objet_hero, id_objet=#ID_RUBRIQUE, objet=rubrique, logo=#LOGO_RUBRIQUE|extraire_attribut{src}}/>
+		</BOUCLE_si_logo>
+
+		<INCLURE{fond=inclure/breadcrumb/rubrique, id_rubrique}/>
+
+		<div class="rubrique">
+			<header class="rubrique_header region">
+				<div class="flow prose">
+					<h1 class="rubrique_title">#TITRE</h1>
+					[<div class="rubrique_desc text-step-2 flow">(#TEXTE)</div>]
+				</div>
+			</header>
+
+			<div class="rubrique_content gap-top-2 gap-bottom-5">
+				<div class="pod">
+					<INCLURE{fond=inclure/listes/rubrique_cards_article_grille, id_rubrique, pagination=999, card_type=support, env, ajax} />
+				</div>
+			</div>
+		</div>
+	</div>
+</BOUCLE_rubrique>

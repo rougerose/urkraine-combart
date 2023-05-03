@@ -1,0 +1,9 @@
+<B_rubrique_cards_article>
+	#ANCRE_PAGINATION
+	<div class="flow flow-space-2xl">
+		<BOUCLE_rubrique_cards_article(ARTICLES){id_rubrique}{!par date}{pagination #ENV{pagination, 12} _articles}>
+			<INCLURE{fond=inclure/resumes/article_card, card_type=#ENV{card_type, ''}, id_article}/>
+		</BOUCLE_rubrique_cards_article>
+	</div>
+	[<nav class="pagination gap-top-5" role="navigation">(#PAGINATION{uca, afficher_lien_precedent=1, afficher_lien_suivant=1})</nav>]
+</B_rubrique_cards_article>

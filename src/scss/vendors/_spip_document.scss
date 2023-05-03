@@ -1,0 +1,85 @@
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
+.spip_documents {
+	display: flex;
+
+	figcaption {
+		p {
+			max-width: unset;
+		}
+	}
+}
+
+// Images
+.spip_document_image {
+	> figure {
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	.portfolio & > figure {
+		margin: 0;
+	}
+}
+
+.spip_documents.oembed,
+.spip_document_image {
+	figure {
+		flex: 1;
+	}
+
+	.oembed {
+		background: var(--color-paper);
+		padding: 0;
+		border-color: var(--color-paper);
+	}
+
+	figcaption {
+		border-left: 1px solid var(--color-border-document);
+		padding: var(--space-2xs) 0 0 var(--space-2xs);
+	}
+}
+
+// Fichiers
+.spip_document_file {
+	border: 1px solid var(--color-border-document);
+	padding: 1rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+
+	& > figure {
+		flex-basis: 0;
+		flex-grow: 999;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	& img {
+		width: 64px;
+	}
+}
+
+// Fichiers : bouton de téléchargement
+.spip_doc_action {
+	flex-grow: 1;
+	display: flex;
+
+	& .button-cta {
+		flex: 1;
+		justify-content: center;
+	}
+}
+
+// Images et fichiers : Titre, descriptif et crédits
+.spip_doc_titre {
+	font-weight: 600;
+}
+
+.spip_doc_descriptif,
+.spip_doc_credits {
+	font-size: var(--step--1);
+	font-weight: 300;
+}

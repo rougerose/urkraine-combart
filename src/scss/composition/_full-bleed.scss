@@ -1,0 +1,8 @@
+// Breaking Elements out of Their Containers in CSS
+// @link https://www.bram.us/2019/04/09/breaking-elements-out-of-their-containers-in-css-with-full-bleed/
+
+.full-bleed {
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}

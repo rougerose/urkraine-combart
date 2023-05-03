@@ -1,0 +1,27 @@
+/// Spip : Boutons d'administration
+
+// Conteneur
+.spip-admin-float {
+	display: flex;
+	top: auto !important;
+	right: auto !important;
+	bottom: 4px;
+	left: 4px;
+}
+
+// Boutons
+.spip-admin-float .spip-admin-boutons {
+	margin: 0 0.25rem 0 0;
+	font: normal var(--step--3) var(--font-family-mono);
+	border-radius: 4px;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+	letter-spacing: 0.05em;
+	text-align: left;
+	opacity: 1;
+	transition: color 0.2s;
+}
+
+// Debug
+#spip-debug {
+	color: var(--color-black);
+}

@@ -1,0 +1,9 @@
+hr {
+	border: none;
+	border-top: 2px solid var(--color-secondary);
+
+	&,
+	& + * {
+		--flow-space: var(--space-xl);
+	}
+}

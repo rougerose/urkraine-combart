@@ -1,0 +1,44 @@
+.icon {
+	height: var(--icon-size, 1em);
+	width: var(--icon-size, 1em);
+}
+
+.icon-download {
+	stroke: currentColor;
+}
+
+.icon-arrow {
+	--icon-size: 0.9em;
+	--icon-opacity: 0;
+	--icon-transform: none;
+	margin-top: 0.1em;
+	stroke: currentColor;
+	stroke-width: var(--icon-stroke-width, 4px);
+	transition: transform 0.3s ease-out, stroke 0.1s;
+
+	path:nth-of-type(1) {
+		transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		opacity: var(--icon-opacity);
+	}
+
+	path:nth-of-type(2) {
+		transition: transform 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		transform: var(--icon-transform);
+	}
+
+	a:hover & {
+		--icon-opacity: 1;
+		stroke: currentColor;
+		transform: transalteX(-8px);
+
+		&.icon-arrow-right {
+			--icon-transform: translateX(6px);
+		}
+
+		&.icon-arrow-left {
+			--icon-transform: translateX(-8px);
+		}
+	}
+}
+
+// .icon-social {}

@@ -1,0 +1,14 @@
+.offset {
+	position: relative;
+
+	&::after {
+		background-color: var(--color-ink);
+		content: "";
+		height: 100%;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		width: 100vw;
+	}
+}

@@ -1,0 +1,11 @@
+// @use "../settings";
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: var(--color-paper);
+	color: var(--color-ink);
+	font: 400 var(--step-0) / 1.5 var(--font-family-mono);
+}

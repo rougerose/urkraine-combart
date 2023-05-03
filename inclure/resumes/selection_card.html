@@ -1,0 +1,21 @@
+<BOUCLE_actualite(SELECTIONS_CONTENUS){id_selections_contenu}>
+	[(#SET{heading, #ENV{heading, h3}})]
+	<article class="card"[ data-type="(#ENV{card_type})"]>
+		<INCLURE{fond=inclure/images/logo_selection_card, id_selections_contenu}/>
+		<div class="card_content flow">
+			<div class="card_header">
+				[(#GET{heading}|=={h2}|oui)
+					<h2><a href="#URL">#TITRE</a></h2>
+				][(#GET{heading}|=={h3}|oui)
+					<h3><a href="#URL">#TITRE</a></h3>
+				]
+			</div>
+			<div class="card_desc flow">
+				[(#DESCRIPTIF)]
+				<p class="card_button-more">
+					<a href="#URL" class="button with-icon-right" data-type="link"><:uca:cta_lire_suite:>[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a>
+				</p>
+			</div>
+		</div>
+	</article>
+</BOUCLE_actualite>

@@ -1,0 +1,23 @@
+<BOUCLE_article_card(ARTICLES){id_article}>
+	[(#SET{heading, #ENV{heading, h2}})]
+	<article class="card"[ data-type="(#ENV{card_type})"]>
+		<INCLURE{fond=inclure/images/logo_article_card, id_article}/>
+		<div class="card_content flow">
+			<div class="card_header">
+				[<p>(#SURTITRE)</p>]
+				[(#GET{heading}|=={h2}|oui)
+					<h2><a href="#URL_ARTICLE">#TITRE</a></h2>
+				][(#GET{heading}|=={h3}|oui)
+					<h3><a href="#URL_ARTICLE">#TITRE</a></h3>
+				]
+				[<p>(#SOUSTITRE)</p>]
+			</div>
+			<div class="card_desc flow">
+				[(#DESCRIPTIF|sinon{#INTRODUCTION{200}})]
+				<p class="card_button-more">
+					<a href="#URL_ARTICLE" class="button with-icon-right" data-type="link"><:uca:cta_lire_suite:>[ (#INCLURE{fond=images/icon-arrow-right-32.svg, svg=icon icon-arrow icon-arrow-right, aria-hidden=true})]</a>
+				</p>
+			</div>
+		</div>
+	</article>
+</BOUCLE_article_card>

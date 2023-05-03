@@ -1,0 +1,60 @@
+<BOUCLE_file (DOCUMENTS) {id_document=#ENV{id,#ENV{id_document}}} {tout}>
+[(#REM)
+	<!--
+		Surcharges du modèle file.html :
+		- Si Espace privé, le modèle n'est pas modifié. Si Espace publique, ajout d'un bouton de téléchargement.
+		- Si le fichier possède une vignette personnalisée, elle est recadrée à 192px (64px @x3). Via CSS, elle sera redimensionnée à 64px.
+	-->
+]
+[(#MEDIA|=={image}|oui)
+	#SET{fichier,#URL_DOCUMENT}
+	#SET{width,#LARGEUR}
+	#SET{height,#HAUTEUR}
+	#SET{url,#ENV{lien}}
+][(#MEDIA|=={image}|non)
+	[(#ID_VIGNETTE|?{
+		[(#SET{image, #LOGO_DOCUMENT|image_passe_partout{192,192}|image_recadre{192,192,center}})],
+		[(#SET{image, #LOGO_DOCUMENT})]
+	})]
+	[(#SET{fichier, #GET{image}|extraire_attribut{src}})]
+	[(#SET{width,[(#GET{image}|extraire_attribut{width})]})]
+	[(#SET{height,[(#GET{image}|extraire_attribut{height})]})]
+	#SET{url,#ENV{lien,#URL_DOCUMENT}}
+][<!--(#REM)
+
+
+	Si largeur ou hauteur fournit en parametre, redimensionner
+
+-->][
+(#ENV{largeur,0}|ou{#ENV{hauteur,0}})
+	#SET{fichier,#GET{fichier}|image_reduire{#ENV{largeur,0},#ENV{hauteur,0}}}
+	#SET{width,#GET{fichier}|largeur}
+	#SET{height,#GET{fichier}|hauteur}
+	#SET{fichier,#GET{fichier}|extraire_attribut{src}}
+]
+[(#SET{title,[(#TYPE_DOCUMENT) - [(#TAILLE|taille_en_octets)]]})]
+[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})]
+[(#MEDIA|=={image}|oui) #SET{title,#TITRE|sinon{#GET{title}}]
+
+[(#REM|test_espace_prive|oui)
+	<div class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{file}) ]spip_lien_ok"[ (#ID_DOCUMENT|medias_modele_document_standard_attributs{file})]>
+		<figure class="spip_doc_inner">
+			[<a href="(#GET{url})"[ class="(#ENV{lien_class}|concat{' spip_doc_lien'})"] title='[(#GET{title}|attribut_html)]'[ (#ENV{lien}|?{'',type="#MIME_TYPE"})]>]<img src='#GET{fichier}' width='#GET{width}' height='#GET{height}' alt='' />[(#GET{url}|?{</a>})]
+			#GET{legende}
+		</figure>
+	</div>
+][(#REM|test_espace_prive|non)
+	<div class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{file}) ]spip_lien_ok"[ (#ID_DOCUMENT|medias_modele_document_standard_attributs{file})]>
+      <figure class="spip_doc_inner file">
+        [<a href="(#GET{url})"[
+          class="(#ENV{lien_class}|concat{' spip_doc_lien'})"] title="[(#GET{title}|attribut_html)]"[
+          (#ENV{lien}|?{'',type="#MIME_TYPE"})]>]<img src="#GET{fichier}" width="#GET{width}" height="#GET{height}" alt="#ALT" />[(#GET{url}|?{</a>})]
+        #GET{legende}
+      </figure>
+      [<div class="spip_doc_action">
+        <a href="(#GET{url})" class="button with-icon-left" data-type="primary"[ (#ENV{lien}|?{'',type="#MIME_TYPE"})]>[(#INCLURE{fond=images/icon-download-100.svg, svg=icon icon-download, aria-hidden=true}) ]<span class="button_label"><:uca:cta_telecharger:> <span>[(#TYPE_DOCUMENT)][ - (#TAILLE|taille_en_octets)]</span></span></a>
+      </div>]
+    </div>
+]
+</BOUCLE_file>
+#FILTRE{trim}

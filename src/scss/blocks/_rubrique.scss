@@ -1,0 +1,14 @@
+// Squelette Rubrique
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
+// .rubrique_header {}
+
+.rubrique_title {
+	color: var(--color-object-title);
+}
+
+// .rubrique_desc {}
+
+// .rubrique_content {}

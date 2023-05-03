@@ -1,0 +1,75 @@
+// Pod (sections)
+
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+@use "sass:color";
+
+.pod {
+	&--banner {
+		background-color: map.get(colors.$green, 70);
+		color: var(--color-paper);
+		margin-top: var(--space-m-l);
+		margin-bottom: var(--space-m-l);
+		padding: var(--space-l-xl);
+	}
+
+	// &--sticky {
+	// 	position: sticky;
+	// 	top: var(--space-l);
+	// 	align-self: start;
+	// }
+
+	&--article-related {
+		background-color: color.adjust(
+			map.get(colors.$green, 90),
+			$alpha: -0.3
+		);
+		margin-top: var(--space-2xl-3xl);
+		margin-bottom: var(--space-2xl-3xl);
+		padding-top: var(--space-l-xl);
+		padding-bottom: var(--space-l-xl);
+	}
+
+	&--presentation {
+		& + & {
+			margin-top: var(--space-3xl);
+		}
+
+		& + &:nth-child(2n) {
+			& .with-sidebar {
+				flex-direction: row-reverse;
+			}
+		}
+
+		& .pod_heading {
+			margin-bottom: var(--space-xl);
+			& a {
+				text-decoration: none;
+			}
+		}
+
+		& .pod_desc {
+			align-self: center;
+			font-size: var(--step-1);
+		}
+
+		& .with-sidebar {
+			--sidebar-width: 27rem;
+			gap: var(--space-m-l) var(--space-l-xl);
+		}
+
+		& img {
+			width: 100%;
+		}
+	}
+}
+
+.pod_heading {
+	color: var(--color-secondary);
+	font-size: var(--step-4);
+
+	.pod--article-related & {
+		margin-bottom: var(--space-l-xl);
+		font-size: var(--step-3);
+	}
+}

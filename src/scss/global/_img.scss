@@ -1,0 +1,9 @@
+// Images responsives
+// En complément des règles du reset.css
+// @link https://web.dev/learn/design/responsive-images/
+
+img,
+picture {
+	max-inline-size: 100%;
+	block-size: auto;
+}

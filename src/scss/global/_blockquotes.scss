@@ -1,0 +1,9 @@
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
+blockquote {
+	padding-inline-start: 1em;
+	border-inline-start: 0.3em solid #{map.get(colors.$blue, "60")};
+	// font-style: italic;
+	// font-size: var(--step-1);
+}

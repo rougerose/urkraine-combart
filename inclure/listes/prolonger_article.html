@@ -1,0 +1,31 @@
+<BOUCLE_prolonger_article(ARTICLES){id_article}>
+	<B_articles_lies>
+		<aside class="pod pod--article-related full-bleed">
+			<div class="wrapper">
+				<div class="flow">
+					<h2 class="pod_heading"><:uca:prolonger_articles_lies:></h2>
+					<div class="grid" data-layout="tiers">
+						<BOUCLE_articles_lies(ARTICLES){id_article IN #ARTICLES_LIES}>
+							<INCLURE{fond=inclure/resumes/article_card, card_type=support, heading=h3, id_article}/>
+						</BOUCLE_articles_lies>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</B_articles_lies>
+		<B_articles_rubrique>
+			<aside class="pod pod--article-related full-bleed">
+				<div class="wrapper">
+					<div class="flow">
+						<h2 class="pod_heading"><:uca:prolonger_articles_rubrique:></h2>
+						<div class="grid grid--gutter-xl[(#TOTAL_BOUCLE|=={1}|?{' grid--fill', ''})]" data-layout="tiers">
+							<BOUCLE_articles_rubrique(ARTICLES){id_rubrique}{par num titre}{exclus}>
+								<INCLURE{fond=inclure/resumes/article_card, card_type=related, heading=h3, id_article}/>
+							</BOUCLE_articles_rubrique>
+						</div>
+					</div>
+				</div>
+			</aside>
+		</B_articles_rubrique>
+	<//B_articles_lies>
+</BOUCLE_prolonger_article>

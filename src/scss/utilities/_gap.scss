@@ -1,0 +1,25 @@
+// Gap spacing, margin utilities
+
+.gap-top-5 {
+	margin-top: var(--space-2xl-3xl);
+}
+
+.gap-top-4 {
+	margin-top: var(--space-xl-2xl);
+}
+
+.gap-top-3 {
+	margin-top: var(--space-l-xl);
+}
+
+.gap-top-2 {
+	margin-top: var(--space-m-l);
+}
+
+.gap-bottom-5 {
+	margin-bottom: var(--space-2xl-3xl);
+}
+
+.gap-bottom-4 {
+	margin-bottom: var(--space-xl-2xl);
+}

@@ -1,0 +1,7 @@
+@use "../abstract/variables_colors" as colors;
+@use "sass:map";
+
+.spip_code {
+	color: var(--color-ink);
+	background-color: map.get(colors.$blue, 70);
+}

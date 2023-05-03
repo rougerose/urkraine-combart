@@ -1,0 +1,45 @@
+// pagination
+
+@use "../tools/mq";
+
+.pagination {
+	display: grid;
+	align-items: center;
+	grid-gap: var(--space-xs);
+
+	@include mq.mq($from: 640px) {
+		grid-template-columns: 1fr minmax(0, max-content) 1fr;
+	}
+}
+
+.pagination_list {
+	display: flex;
+	justify-content: center;
+}
+
+.pagination_item {
+	> * {
+		padding: 0.2em 0.5em 0.25em;
+		margin-right: 0.25em;
+		color: var(--color-link);
+		text-decoration: none;
+	}
+
+	> a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	> .on {
+		background-color: var(--color-contrast);
+		color: var(--color-link-contrast);
+	}
+}
+
+.pagination_prev-next {
+	&:last-child {
+		text-align: right;
+	}
+}

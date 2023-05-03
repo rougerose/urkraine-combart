@@ -1,0 +1,35 @@
+<BOUCLE(ARTICLES){id_article}>
+	<div class="wrapper">
+		<INCLURE{fond=inclure/breadcrumb/article, id_article}/>
+
+		<article class="article article--contact prose flow">
+			<header class="article_header flow">
+				[<p class="article_leadin-title"><span>(#SURTITRE)</span></p>]
+				<h1 class="article_title">#TITRE</h1>
+				[<p class="article_subtitle">(#SOUSTITRE)</p>]
+				[<div class="article_desc">(#CHAPO|adaptive_images{800})</div>]
+			</header>
+			<div class="article_content with-sidebar">
+				<div>
+					[<div class="flow">
+						(#TEXTE|adaptive_images{800}|ancres_sommaire)
+					</div>]
+					<BOUCLE_documents(DOCUMENTS){id_article}{vu=non}{media=file}{0,1}>
+						<INCLURE{fond=inclure/listes/article_documents_fichiers, id_article}/>
+					</BOUCLE_documents>
+					<BOUCLE_portfolio(DOCUMENTS){id_article}{vu=non}{media=image}{0,1}>
+						<INCLURE{fond=inclure/listes/article_documents_images, id_article}/>
+					</BOUCLE_portfolio>
+					[<div class="article_notes grid gap-top-5">
+						(#NOTES)
+					</div>]
+				</div>
+				<BOUCLE_formmulaire(AUTEURS){id_article}{tout}>
+					[<div class="formulaire-contact ajax">
+						(#FORMULAIRE_ECRIRE_AUTEUR)
+					</div>]
+				</BOUCLE_formmulaire>
+			</div>
+		</article>
+	</div>
+</BOUCLE>

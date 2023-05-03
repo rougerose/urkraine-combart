@@ -1,0 +1,9 @@
+// @use "gutenberg-css/scss/variables" as gcss;
+@use "gutenberg-css_variables" as variables;
+
+body {
+	padding-bottom: variables.$page-padding-bottom;
+	padding-left: variables.$page-padding-left;
+	padding-right: variables.$page-padding-right;
+	padding-top: variables.$page-padding-top;
+}

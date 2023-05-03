@@ -1,0 +1,17 @@
+// ========================================
+// Gutenberg
+// MIT Fabien Sa
+// https://github.com/BafS/Gutenberg
+// v.0.7.0
+// ========================================
+
+@use "gutenberg-css_print-reset";
+@use "gutenberg-css/scss/pagination";
+@use "gutenberg-css_page";
+@use "gutenberg-css/scss/reformat";
+@use "gutenberg-css/scss/utilities";
+
+// ========================================
+// Styles spécifiques à Ukraine CombArt
+// ========================================
+@use "uca-print";
