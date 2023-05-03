@@ -21,8 +21,8 @@
 
 	&--article-related {
 		background-color: color.adjust(
-			map.get(colors.$green, 90),
-			$alpha: -0.3
+			map.get(colors.$green, 50),
+			$alpha: -0.5
 		);
 		margin-top: var(--space-2xl-3xl);
 		margin-bottom: var(--space-2xl-3xl);
@@ -65,7 +65,7 @@
 }
 
 .pod_heading {
-	color: var(--color-secondary);
+	color: var(--color-paper);
 	font-size: var(--step-4);
 
 	.pod--article-related & {

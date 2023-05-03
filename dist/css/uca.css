@@ -1235,7 +1235,7 @@ a:hover .icon-arrow.icon-arrow-left {
   padding: var(--space-l-xl);
 }
 .pod--article-related {
-  background-color: rgba(43, 87, 0, 0.7);
+  background-color: rgba(156, 255, 56, 0.5);
   margin-top: var(--space-2xl-3xl);
   margin-bottom: var(--space-2xl-3xl);
   padding-top: var(--space-l-xl);
@@ -1266,7 +1266,7 @@ a:hover .icon-arrow.icon-arrow-left {
 }
 
 .pod_heading {
-  color: var(--color-secondary);
+  color: var(--color-paper);
   font-size: var(--step-4);
 }
 .pod--article-related .pod_heading {
