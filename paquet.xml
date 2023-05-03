@@ -1,12 +1,12 @@
 <paquet
 	prefix="uca"
 	version="1.0.0"
-	etat="dev"
+	etat="test"
 	compatibilite="[4.1.0;4.1.*]"
 	logo="uca-512.svg"
 	documentation=""
 >
-	<nom>Ukraine CombArt squelettes et thème graphique</nom>
+	<nom>Ukraine CombArt : squelettes et thème graphique</nom>
 	<!-- slogan paquet -->
 	<auteur lien='http:rouge-rose.net'>christophe le drean</auteur>
 	<licence>GNU/GPL</licence>
@@ -15,9 +15,9 @@
     <necessite nom="a2a" compatibilite="[4.0.1;[" />
     <necessite nom="fontawesome" compatibilite="[1.0.5;[" />
     <necessite nom="adaptive_images" compatibilite="[3.0.10;[" />
-    <necessite nom="centre_image" compatibilite="[3.1.2;[" />
+    <necessite nom="centre_image" compatibilite="[3.1.1;[" />
     <necessite nom="porte_plume_intertitres" compatibilite="[2.0.6;[" />
-    <necessite nom="menus" compatibilite="[2.0.6;[" />
+    <necessite nom="menus" compatibilite="[2.0.5;[" />
     <necessite nom="sommaire" compatibilite="[2.0.0;[" />
     <necessite nom="selections_editoriales" compatibilite="[2.0.5;[" />
     <utilise nom="medias" />
