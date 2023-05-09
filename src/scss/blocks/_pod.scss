@@ -6,6 +6,7 @@
 
 .pod {
 	&--banner {
+		--color-bkg-btn-discreet: #{map.get(colors.$green, 70)};
 		background-color: map.get(colors.$green, 70);
 		color: var(--color-paper);
 		margin-top: var(--space-m-l);
@@ -65,10 +66,11 @@
 }
 
 .pod_heading {
-	color: var(--color-paper);
+	color: var(--color-secondary);
 	font-size: var(--step-4);
 
 	.pod--article-related & {
+		color: var(--color-paper);
 		margin-bottom: var(--space-l-xl);
 		font-size: var(--step-3);
 	}

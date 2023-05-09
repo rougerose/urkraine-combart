@@ -1,6 +1,6 @@
 <paquet
 	prefix="uca"
-	version="1.0.2"
+	version="1.0.3"
 	etat="test"
 	compatibilite="[4.1.0;4.1.*]"
 	logo="uca-512.svg"

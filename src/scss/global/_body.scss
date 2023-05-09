@@ -8,4 +8,8 @@ body {
 	background-color: var(--color-paper);
 	color: var(--color-ink);
 	font: 400 var(--step-0) / 1.5 var(--font-family-mono);
+	// lignes et url longues
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }

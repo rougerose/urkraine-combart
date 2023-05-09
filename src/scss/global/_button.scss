@@ -4,25 +4,39 @@
 
 .button,
 .btn {
-	-webkit-appearance: button; // Safari otherwise prevents some styles
-	appearance: none;
+	border: none;
+	border-radius: var(--border-radius-base, 0);
+	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 0;
-	border-radius: var(--border-radius-base, 0);
-	cursor: pointer;
-	font-weight: 600;
-	line-height: 1 !important;
-	margin: 0; // Firefox and Safari have margin
 	min-height: 44px;
 	min-width: 10ch;
 	padding: 0.25em 0.75em;
-	overflow: visible; // Edge hides overflow
-	position: relative;
-	text-transform: none; // Firefox inherits text-transform
 	text-decoration: none;
+	font-weight: 600;
+	line-height: 1;
+	text-align: center;
 	white-space: nowrap;
+	// -webkit-appearance: button; // Safari otherwise prevents some styles
+	// appearance: none;
+	// display: inline-flex;
+	// align-items: center;
+	// justify-content: center;
+	// border: 0;
+	// border-radius: var(--border-radius-base, 0);
+	// cursor: pointer;
+	// font-weight: 600;
+	// line-height: 1 !important;
+	// margin: 0; // Firefox and Safari have margin
+	// min-height: 44px;
+	// min-width: 10ch;
+	// padding: 0.25em 0.75em;
+	// overflow: visible; // Edge hides overflow
+	// position: relative;
+	// text-transform: none; // Firefox inherits text-transform
+	// text-decoration: none;
+	// white-space: nowrap;
 }
 
 .button {
@@ -30,14 +44,12 @@
 		width: var(--icon-size, 1em);
 		height: var(--icon-size, 1em);
 		fill: currentColor;
-		// transform: translateY(-0.2ex);
 	}
 
 	&[data-type="primary"] {
 		background-color: var(--color-contrast);
 		color: var(--color-link-contrast);
-		border-radius: 4px;
-		padding: 0.5em 0.5em;
+		// padding: 0.5em 0.5em;
 
 		&:hover {
 			box-shadow: 0px 5px 5px -3px color.adjust(map.get(colors.$green, 80), $alpha:
@@ -67,8 +79,8 @@
 		}
 	}
 
-	&[data-type="secondary-reversed"] {
-		background-color: transparent;
+	&[data-type="discreet"] {
+		background-color: var(--color-bkg-btn-discreet, transparent);
 		color: var(--color-paper);
 
 		&:hover {
@@ -86,20 +98,20 @@
 	}
 
 	&[data-type="link"] {
-		background-color: transparent;
+		background-color: var(--color-bkg-btn-link, transparent);
 		color: var(--color-link);
-		padding: 0.5em 0.5em;
+		// padding: 0.5em 0.5em;
 	}
 
-	&[data-type="link-reversed"] {
-		background-color: transparent;
-		color: var(--color-paper);
+	// &[data-type="link-reversed"] {
+	// 	background-color: transparent;
+	// 	color: var(--color-paper);
 
-		&:hover {
-			background-color: var(--color-paper);
-			color: var(--color-primary);
-		}
-	}
+	// 	&:hover {
+	// 		background-color: var(--color-paper);
+	// 		color: var(--color-primary);
+	// 	}
+	// }
 
 	&.with-icon-left {
 		// align-items: flex-end;
