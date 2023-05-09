@@ -65,10 +65,11 @@
 }
 
 .pod_heading {
-	color: var(--color-paper);
+	color: var(--color-secondary);
 	font-size: var(--step-4);
 
 	.pod--article-related & {
+		color: var(--color-paper);
 		margin-bottom: var(--space-l-xl);
 		font-size: var(--step-3);
 	}
