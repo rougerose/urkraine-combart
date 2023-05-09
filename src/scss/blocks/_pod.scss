@@ -6,6 +6,7 @@
 
 .pod {
 	&--banner {
+		--color-bkg-btn-discreet: #{map.get(colors.$green, 70)};
 		background-color: map.get(colors.$green, 70);
 		color: var(--color-paper);
 		margin-top: var(--space-m-l);

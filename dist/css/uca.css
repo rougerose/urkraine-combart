@@ -622,25 +622,19 @@ blockquote {
 
 .button,
 .btn {
-  -webkit-appearance: button;
-  -moz-appearance: none;
-       appearance: none;
+  border: none;
+  border-radius: var(--border-radius-base, 0);
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 0;
-  border-radius: var(--border-radius-base, 0);
-  cursor: pointer;
-  font-weight: 600;
-  line-height: 1 !important;
-  margin: 0;
   min-height: 44px;
   min-width: 10ch;
   padding: 0.25em 0.75em;
-  overflow: visible;
-  position: relative;
-  text-transform: none;
   text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -652,8 +646,6 @@ blockquote {
 .button[data-type=primary] {
   background-color: var(--color-contrast);
   color: var(--color-link-contrast);
-  border-radius: 4px;
-  padding: 0.5em 0.5em;
 }
 .button[data-type=primary]:hover {
   box-shadow: 0px 5px 5px -3px rgba(71, 143, 0, 0.1), 0px 8px 8px 1px rgba(71, 143, 0, 0.2), 0px 3px 8px 2px rgba(71, 143, 0, 0.2);
@@ -667,28 +659,19 @@ blockquote {
   box-shadow: 0px 5px 5px -3px rgba(0, 18, 36, 0.1), 0px 8px 8px 1px rgba(0, 18, 36, 0.2), 0px 3px 8px 2px rgba(0, 18, 36, 0.2);
   transition: transform 0.2s linear, box-shadow 0.2s linear, background-color 0.3s ease;
 }
-.button[data-type=secondary-reversed] {
-  background-color: transparent;
+.button[data-type=discreet] {
+  background-color: var(--color-bkg-btn-discreet, transparent);
   color: var(--color-paper);
 }
-.button[data-type=secondary-reversed]:hover {
+.button[data-type=discreet]:hover {
   background-color: var(--color-paper);
   color: var(--color-link);
   box-shadow: 0px 5px 5px -3px rgba(0, 18, 36, 0.1), 0px 8px 8px 1px rgba(0, 18, 36, 0.2), 0px 3px 8px 2px rgba(0, 18, 36, 0.2);
   transition: transform 0.2s linear, box-shadow 0.2s linear, color 0.3s ease, background-color 0.3s ease;
 }
 .button[data-type=link] {
-  background-color: transparent;
+  background-color: var(--color-bkg-btn-link, transparent);
   color: var(--color-link);
-  padding: 0.5em 0.5em;
-}
-.button[data-type=link-reversed] {
-  background-color: transparent;
-  color: var(--color-paper);
-}
-.button[data-type=link-reversed]:hover {
-  background-color: var(--color-paper);
-  color: var(--color-primary);
 }
 .button.with-icon-left svg {
   margin-right: 0.5em;
@@ -1228,6 +1211,7 @@ a:hover .icon-arrow.icon-arrow-left {
 }
 
 .pod--banner {
+  --color-bkg-btn-discreet: hsl(90, 100%, 39%);
   background-color: hsl(90, 100%, 39%);
   color: var(--color-paper);
   margin-top: var(--space-m-l);
@@ -1266,10 +1250,11 @@ a:hover .icon-arrow.icon-arrow-left {
 }
 
 .pod_heading {
-  color: var(--color-paper);
+  color: var(--color-secondary);
   font-size: var(--step-4);
 }
 .pod--article-related .pod_heading {
+  color: var(--color-paper);
   margin-bottom: var(--space-l-xl);
   font-size: var(--step-3);
 }
