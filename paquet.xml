@@ -27,5 +27,6 @@
     <utilise nom="pages" />
     <utilise nom="prism" />
     <utilise nom="oembed" />
+    <utilise nom="facteur" />
     <pipeline nom="nospam_lister_formulaires" inclure="uca_pipelines.php" />
 </paquet>
