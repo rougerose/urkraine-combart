@@ -1,29 +1,8 @@
 <div class="wrapper">
-	<div class="region">
-		<div class="text-center">
-			<h2 class="text-primary text-step-3 text-italic text-normal">#SLOGAN_SITE_SPIP</h2>
-		</div>
-	</div>
-
-	<BOUCLE_actualites(SELECTIONS){identifiant=accueil-actus}>
-		<B_contenus_actualites>
-		  <section class="pod region">
-			<div class="flow">
-				<h2 class="pod_heading">#_actualites:TITRE</h2>
-				<div class="grid[(#TOTAL_BOUCLE|=={1}|oui) grid--fill]" data-layout="tiers">
-					<BOUCLE_contenus_actualites(SELECTIONS_CONTENUS){id_selection}{par rang}>
-					  <INCLURE{fond=inclure/resumes/selection_card, id_selections_contenu} />
-					</BOUCLE_contenus_actualites>
-				</div>
-			</div>
-		  </section>
-		</B_contenus_actualites>
-	</BOUCLE_actualites>
-
 	<BOUCLE_selection_apropos(SELECTIONS){identifiant=accueil-apropos}>
 		<B_contenus_apropos>
-			<div class="xregion">
-				<section class="pod pod--banner gap-bottom-5">
+			<div class="region">
+				<section class="pod pod--banner">
 					<div class="banner flow text-center">
 						<h2 class="banner_title">#_selection_apropos:TITRE</h2>
 						[<div class="banner_desc">
@@ -39,6 +18,21 @@
 			</div>
 		</B_contenus_apropos>
 	</BOUCLE_selection_apropos>
+
+	<BOUCLE_actualites(SELECTIONS){identifiant=accueil-actus}>
+		<B_contenus_actualites>
+		  <section class="pod gap-bottom-5">
+			<div class="flow">
+				<h2 class="pod_heading">#_actualites:TITRE</h2>
+				<div class="grid[(#TOTAL_BOUCLE|=={1}|oui) grid--fill]" data-layout="tiers">
+					<BOUCLE_contenus_actualites(SELECTIONS_CONTENUS){id_selection}{par rang}>
+					  <INCLURE{fond=inclure/resumes/selection_card, id_selections_contenu} />
+					</BOUCLE_contenus_actualites>
+				</div>
+			</div>
+		  </section>
+		</B_contenus_actualites>
+	</BOUCLE_actualites>
 
 	<BOUCLE_selections_presentation(SELECTIONS){identifiant=accueil-presentation}>
 		<B_contenus_presentation>
@@ -60,10 +54,10 @@
 	</BOUCLE_selections_presentation>
 
 	<section class="pod pod--banner gap-bottom-5">
-		<div class="banner text-center">
+		<div class="banner banner--subscribe-nl text-center flow">
 			<h2 class="banner_title"><:uca:newsletter_bandeau_titre:></h2>
 			<p class="banner_desc"><:uca:newsletter_bandeau_desc:></p>
-			<p>Formulaire d'abonnement à ajouter</p>
+			[(#FORMULAIRE_NEWSLETTER_SUBSCRIBE{uca_sendinblue})]
 		</div>
 	</section>
 </div>
