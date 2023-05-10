@@ -20,9 +20,12 @@
     <necessite nom="menus" compatibilite="[2.0.5;[" />
     <necessite nom="sommaire" compatibilite="[2.0.0;[" />
     <necessite nom="selections_editoriales" compatibilite="[2.0.5;[" />
+    <necessite nom="mailsubscribers" compatibilite="[3.1.0;[" />
+    <necessite nom="nospam" compatibilite="[2.4.1;[" />
     <utilise nom="medias" />
     <utilise nom="metasplus" />
     <utilise nom="pages" />
     <utilise nom="prism" />
     <utilise nom="oembed" />
+    <pipeline nom="nospam_lister_formulaires" inclure="uca_pipelines.php" />
 </paquet>
