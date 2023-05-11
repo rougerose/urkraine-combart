@@ -92,7 +92,7 @@
 
 // Formulaire d'abonnement newsletter
 .formulaire_spip {
-	&.formulaire_newsletter_subscribe {
+	&.formulaire_newsletter {
 		max-width: var(--banner-desc-max-width);
 		margin-left: auto;
 		margin-right: auto;
@@ -133,7 +133,7 @@
 					color.adjust(map.get(colors.$green, 60), $alpha: -0.8);
 				background-color: color.adjust(
 					map.get(colors.$green, 40),
-					$alpha: -0.7
+					$alpha: -0.5
 				);
 				box-shadow: none;
 				color: var(--color-paper);
