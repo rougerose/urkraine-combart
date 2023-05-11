@@ -15,8 +15,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'documents_associes' => 'Documents à télécharger',
 
 	// N
-	'newsletter_bandeau_titre' => 'Suivez notre actualité',
-	'newsletter_bandeau_desc' => 'Abonnez-vous à notre newsletter',
+	'newsletter_bandeau_titre_abonnement' => 'Suivez notre actualité',
+	'newsletter_bandeau_titre_desabonnement' => 'Votre abonnement à notre newsletter',
+	'newsletter_bandeau_desc_abonnement' => 'Abonnez-vous à notre newsletter',
+	'newsletter_bandeau_desc_desabonnement' => 'Ce formulaire vous permet de supprimer votre abonnement.',
 
 	// P
 	'portfolio' => 'Portfolio',
