@@ -1,10 +1,10 @@
 // hero-image (article, rubrique, etc.)
 
 .hero-image {
-	margin: 0 auto var(--space-l);
+	margin: var(--space-xl-2xl) auto;
 
 	& img {
-		aspect-ratio: 3/1;
+		aspect-ratio: 16/9;
 		object-fit: cover;
 		width: 100%;
 	}

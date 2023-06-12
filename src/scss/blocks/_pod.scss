@@ -14,12 +14,6 @@
 		padding: var(--space-l-xl);
 	}
 
-	// &--sticky {
-	// 	position: sticky;
-	// 	top: var(--space-l);
-	// 	align-self: start;
-	// }
-
 	&--article-related {
 		background-color: color.adjust(
 			map.get(colors.$green, 50),

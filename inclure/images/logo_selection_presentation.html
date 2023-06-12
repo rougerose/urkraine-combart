@@ -6,14 +6,14 @@
 			2 col -> max 580px @x2.5 1580px
 			3 col -> max 375px @x2.5 937px
 		-->
-	][(#SET{logo, #LOGO_SELECTIONS_CONTENU|image_recadre{2:1,-,center}|extraire_attribut{src}})]
-	[(#SET{S@01, #GET{logo}|image_reduire{375, 188}})]
+	][(#SET{logo, #LOGO_SELECTIONS_CONTENU|image_recadre{16:9,-,focus}|extraire_attribut{src}})]
+	[(#SET{S@01, #GET{logo}|image_reduire{375, 212}})]
 	[(#SET{largeur, #GET{S@01}|largeur})]
 	[(#SET{hauteur, #GET{S@01}|hauteur})]
 	[(#SET{S@01, #GET{S@01}|extraire_attribut{src}})]
-	[(#SET{S@02, #GET{logo}|image_reduire{937, 469}|extraire_attribut{src}})]
-	[(#SET{M@01, #GET{logo}|image_reduire{580, 290}|extraire_attribut{src}})]
-	[(#SET{M@02, #GET{logo}|image_reduire{1580, 790}|extraire_attribut{src}})]
+	[(#SET{S@02, #GET{logo}|image_reduire{937, 530}|extraire_attribut{src}})]
+	[(#SET{M@01, #GET{logo}|image_reduire{580, 328}|extraire_attribut{src}})]
+	[(#SET{M@02, #GET{logo}|image_reduire{1580, 893}|extraire_attribut{src}})]
 	[<div class="pod_media">
 		<a href="#URL">
 			<img src="(#GET{S@01})" srcset="[(#GET{S@01}) 375w][, (#GET{M@01}) 580w][, (#GET{S@02}) 937w][, (#GET{M@02}) 1580w]" sizes="100vw" width="[(#GET{largeur})]" height="[(#GET{hauteur})]" alt="" class="no-adapt-img">
