@@ -32,3 +32,6 @@ define('_NOTES_FERME_NOTE', '</sup>');
 
 // Facteur : couleur des emails
 define('_COULEUR_EMAILS_HTML','#80ff00');
+
+// Sommaire : ne pas ajouter de sections
+define('SOMMAIRE_GENERER_SECTIONS', false);

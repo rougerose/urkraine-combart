@@ -102,6 +102,7 @@
 	// Utiliser uniquement le pluriel spip_documentS
 	// car le singulier (spip_document) n'est pas présent dans le modèle utilisé par oembed
 	.article_content {
+
 		& .spip_documents,
 		& .spip_documents + * {
 			--flow-space: var(--space-xl-2xl);

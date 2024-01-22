@@ -12,3 +12,7 @@ node_modules
 !.vscode/extensions.json
 .idea
 .DS_Store
+
+# Autres
+sendinblue-cle-local.txt
+contacts.txt
