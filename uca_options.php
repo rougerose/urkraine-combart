@@ -34,4 +34,4 @@ define('_NOTES_FERME_NOTE', '</sup>');
 define('_COULEUR_EMAILS_HTML','#80ff00');
 
 // Sommaire : ne pas ajouter de sections
-define('SOMMAIRE_GENERER_SECTIONS', false);
+// define('SOMMAIRE_GENERER_SECTIONS', false);
